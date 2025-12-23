@@ -139,7 +139,7 @@ export default function ParallaxHero({ onProgress, onLoaded }: ParallaxHeroProps
       
       if (newFrameIndex !== frameIndex.current) {
         frameIndex.current = newFrameIndex;
-        requestAnimationFrame(() => drawFrame(newFrameIndex));
+        requestAnimationFrame(() => drawFrame(frameIndex.current));
       }
     };
     
