@@ -1,3 +1,52 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "about-portrait",
+      "description": "Abstract portrait for the about section",
+      "imageUrl": "https://images.unsplash.com/photo-1587592237406-57f41d3139e8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxwb3J0cmFpdCUyMGFic3RyYWN0fGVufDB8fHx8MTc2NjUwNzYzNHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "portrait abstract"
+    },
+    {
+      "id": "path-animated-websites",
+      "description": "Thumbnail for animated websites learning path",
+      "imageUrl": "https://images.unsplash.com/photo-1645323927890-ebc1462c12c8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHx3ZWJzaXRlJTIwYW5pbWF0aW9ufGVufDB8fHx8MTc2NjQ3MjA4M3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "website animation"
+    },
+    {
+      "id": "path-ai-builders",
+      "description": "Thumbnail for AI website builders learning path",
+      "imageUrl": "https://images.unsplash.com/photo-1664809479650-d52650c04ce8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxBSSUyMGJ1aWxkZXJ8ZW58MHx8fHwxNzY2NTA3NjM0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "AI builder"
+    },
+    {
+      "id": "path-internal-tools",
+      "description": "Thumbnail for internal AI tools learning path",
+      "imageUrl": "https://images.unsplash.com/photo-1731246164682-867af4a1a2b1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxpbnRlcm5hbCUyMHRvb2xzfGVufDB8fHx8MTc2NjUwNzYzNHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "internal tools"
+    },
+    {
+      "id": "path-ai-apps",
+      "description": "Thumbnail for AI app development learning path",
+      "imageUrl": "https://images.unsplash.com/photo-1746286721753-fde48e5d1314?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxBSSUyMGFwcHxlbnwwfHx8fDE3NjY1MDc2MzR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "AI app"
+    },
+    {
+      "id": "testimonial-1",
+      "description": "Portrait for first testimonial",
+      "imageUrl": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxwZXJzb24lMjBwb3J0cmFpdHxlbnwwfHx8fDE3NjYzOTEyMDB8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "person portrait"
+    },
+    {
+      "id": "testimonial-2",
+      "description": "Portrait for second testimonial",
+      "imageUrl": "https://images.unsplash.com/photo-1590086782792-42dd2350140d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxwZXJzb24lMjBwb3J0cmFpdHxlbnwwfHx8fDE3NjYzOTEyMDB8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "person portrait"
+    },
+    {
+      "id": "testimonial-3",
+      "description": "Portrait for third testimonial",
+      "imageUrl": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxwZXJzb24lMjBwb3J0cmFpdHxlbnwwfHx8fDE3NjYzOTEyMDB8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "person portrait"
+    }
+  ]
 }
