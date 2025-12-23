@@ -7,6 +7,7 @@ import { communityConfig } from '@/lib/config';
 const TOTAL_FRAMES = 240;
 const FRAME_URL_PREFIX = 'https://kicfhcemxzavsyfrvxgf.supabase.co/storage/v1/object/public/Webp%20sequence/frame_';
 const FRAME_URL_SUFFIX = '_delay-0.04s.webp';
+const ANIMATION_DURATION_VH = 150; // Controls scroll speed, smaller is faster
 
 const padFrame = (frame: number) => frame.toString().padStart(3, '0');
 
@@ -44,8 +45,7 @@ export default function ParallaxHero({ onProgress, onLoaded }: ParallaxHeroProps
           onProgress((loadedCount / TOTAL_FRAMES) * 100);
           resolve();
         };
-        img.onerror = (err) => {
-          // Still resolve so that Promise.all doesn't fail on a single image error
+        img.onerror = () => {
           resolve();
         };
       });
@@ -110,11 +110,13 @@ export default function ParallaxHero({ onProgress, onLoaded }: ParallaxHeroProps
           const scrollY = window.scrollY;
           const rect = heroRef.current.getBoundingClientRect();
           const scrollTop = scrollY + rect.top;
-          const scrollHeight = heroRef.current.scrollHeight - window.innerHeight;
+          
+          // Use a fixed scroll height based on viewport height for the animation duration
+          const animationScrollHeight = window.innerHeight * (ANIMATION_DURATION_VH / 100);
   
           let scrollFraction = 0;
-          if (scrollHeight > 0) {
-            scrollFraction = Math.min(1, Math.max(0, (scrollY - scrollTop) / scrollHeight));
+          if (animationScrollHeight > 0) {
+            scrollFraction = Math.min(1, Math.max(0, (scrollY - scrollTop) / animationScrollHeight));
           }
   
           const newFrameIndex = Math.min(TOTAL_FRAMES - 1, Math.max(0, Math.floor(scrollFraction * TOTAL_FRAMES)));
@@ -153,7 +155,7 @@ export default function ParallaxHero({ onProgress, onLoaded }: ParallaxHeroProps
   }, [drawFrame, isMounted]);
 
   return (
-    <div ref={heroRef} className="relative h-[300vh] w-full">
+    <div ref={heroRef} style={{ height: `${ANIMATION_DURATION_VH + 100}vh` }} className="relative w-full">
       <div className="sticky top-0 h-screen w-full overflow-hidden rounded-b-2xl">
         <canvas ref={canvasRef} className="absolute inset-0 h-full w-full" />
         <div className="absolute inset-0 bg-black/40" />
