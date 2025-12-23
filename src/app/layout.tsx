@@ -3,8 +3,8 @@ import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
 
 export const metadata: Metadata = {
-  title: 'Andynocode AI Studio',
-  description: 'A hub where beginners, hobbyists, and professionals learn how to use AI tools to create stunning websites, animated web experiences, internal tools, and full web apps.',
+  title: 'Andy - Creative Developer & AI Specialist',
+  description: 'A personal portfolio showcasing creative development, AI-powered web apps, and animated web experiences.',
 };
 
 export default function RootLayout({

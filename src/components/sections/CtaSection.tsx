@@ -8,15 +8,15 @@ export default function CtaSection() {
           <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary/5"></div>
           <div className="relative">
             <h2 className="font-headline text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
-              Start Building Beautiful AI Websites Today
+              Let's Build Something Amazing Together
             </h2>
             <p className="mx-auto mt-6 max-w-xl text-lg text-muted-foreground">
-              Unlock your creative potential and join a community of innovators shaping the future of web creation.
+              Ready to bring your ideas to life? I'm available for freelance projects and collaborations.
             </p>
             <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-              <Button size="lg">Join Andynocode Community</Button>
+              <Button size="lg">Get In Touch</Button>
               <Button size="lg" variant="outline" className="bg-background/50">
-                Explore Courses
+                View My Work
               </Button>
             </div>
           </div>

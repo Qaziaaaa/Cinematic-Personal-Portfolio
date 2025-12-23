@@ -14,10 +14,10 @@ export default function Footer() {
           </div>
           <nav className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm text-muted-foreground">
             <a href="#about" className="transition-colors hover:text-primary">About</a>
-            <a href="#paths" className="transition-colors hover:text-primary">Courses</a>
-            <a href="#showcase" className="transition-colors hover:text-primary">Showcase</a>
+            <a href="#services" className="transition-colors hover:text-primary">Services</a>
+            <a href="#projects" className="transition-colors hover:text-primary">Projects</a>
             <a href="#faq" className="transition-colors hover:text-primary">FAQ</a>
-            <a href="#" className="transition-colors hover:text-primary">Contact</a>
+            <a href="#cta" className="transition-colors hover:text-primary">Contact</a>
           </nav>
           <div className="flex justify-center space-x-6">
             <a href={communityConfig.socials.youtube} aria-label="Youtube" className="text-muted-foreground transition-colors hover:text-primary">

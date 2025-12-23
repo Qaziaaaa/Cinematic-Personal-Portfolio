@@ -3,11 +3,11 @@ import { Card, CardContent } from "@/components/ui/card";
 import { CheckCircle } from "lucide-react";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 
-const learningPoints = [
-  "Use AI tools for rapid website creation.",
-  "Design and implement cinematic animated web experiences.",
-  "Build and automate internal tools with AI.",
-  "Develop full-fledged AI-assisted web applications.",
+const skills = [
+  "Rapidly creating websites with AI tools.",
+  "Designing and implementing cinematic animated web experiences.",
+  "Building and automating internal tools with AI.",
+  "Developing full-fledged AI-assisted web applications.",
 ];
 
 export default function AboutSection() {
@@ -19,13 +19,13 @@ export default function AboutSection() {
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:items-center">
           <div className="lg:order-2">
             <h2 className="font-headline text-4xl font-bold text-foreground sm:text-5xl">
-              Shaping the Future of AI-Powered Creation
+              About Me
             </h2>
             <p className="mt-6 text-lg text-muted-foreground">
-              The Andynocode Community is a dynamic ecosystem for creators, innovators, and lifelong learners. Our mission is to demystify AI and empower you to build amazing things without writing a single line of code. We believe in learning by doing, supported by a community that shares your passion.
+              I'm a creative developer and AI enthusiast passionate about building beautiful, functional, and innovative web experiences. My mission is to demystify AI and empower clients to leverage cutting-edge technology. I believe in learning by doing and bringing ideas to life through code and creativity.
             </p>
             <ul className="mt-8 space-y-4">
-              {learningPoints.map((point, index) => (
+              {skills.map((point, index) => (
                 <li key={index} className="flex items-start">
                   <CheckCircle className="mt-1 h-5 w-5 flex-shrink-0 text-primary" />
                   <span className="ml-3 text-base text-foreground">{point}</span>

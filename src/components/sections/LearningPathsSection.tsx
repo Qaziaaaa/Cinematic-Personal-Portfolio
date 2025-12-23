@@ -3,7 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/com
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { ArrowRight } from "lucide-react";
 
-const paths = [
+const services = [
   { id: "path-animated-websites", title: "Animated Websites", description: "Master scroll-based animations and cinematic web experiences." },
   { id: "path-ai-builders", title: "AI Website Builders", description: "Build and launch stunning websites in minutes with AI-powered platforms." },
   { id: "path-internal-tools", title: "Internal AI Tools", description: "Automate workflows and create powerful internal applications." },
@@ -12,18 +12,18 @@ const paths = [
 
 export default function LearningPathsSection() {
   return (
-    <section id="paths" className="py-20 sm:py-32 bg-card/50">
+    <section id="services" className="py-20 sm:py-32 bg-card/50">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center">
           <h2 className="font-headline text-4xl font-bold text-foreground sm:text-5xl">
-            Featured Learning Paths
+            What I Do
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
-            Choose your journey. From beginner-friendly visual coding to advanced AI app integration, we have a path for you.
+            I offer a range of services, from building visually stunning animated websites to developing complex AI-driven applications.
           </p>
         </div>
         <div className="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
-          {paths.map(path => {
+          {services.map(path => {
             const pathImage = PlaceHolderImages.find(p => p.id === path.id);
             return (
               <a href="#" key={path.id} className="group block">

@@ -6,10 +6,10 @@ import {
 } from "@/components/ui/accordion";
 
 const faqs = [
-  { question: "Do I need coding skills?", answer: "Not at all! Our community is built for everyone, from complete beginners to seasoned professionals. We focus on tools and techniques that don't require traditional coding." },
-  { question: "What tools will I learn?", answer: "You'll get hands-on experience with a range of AI-powered and no-code tools, including Google AI Studio, Firebase Studio, Opal, and various automation platforms to build websites and applications." },
-  { question: "What is 'vibecoding'?", answer: "Vibecoding is our term for creative coding and development focused on aesthetics, animation, and user experience. It's about building things that not only work well but also feel amazing to interact with." },
-  { question: "Can beginners join?", answer: "Absolutely! We have dedicated learning paths for complete beginners to guide you from the basics to building your first AI-powered project. Our community is supportive and ready to help." },
+  { question: "What kind of projects do you take on?", answer: "I specialize in creating custom websites with a focus on animation and AI integration, building internal tools, and developing full-stack web applications. If you have a creative or technical challenge, I'm interested!" },
+  { question: "What's your development process?", answer: "My process is collaborative and transparent. We'll start with a discovery call to understand your goals, followed by design mockups, development sprints with regular check-ins, and a final launch. Your feedback is crucial at every stage." },
+  { question: "What technologies do you use?", answer: "I work with a modern tech stack including Next.js, React, and Tailwind CSS. For AI features, I use tools like Google's Genkit and Firebase to build powerful, scalable solutions without the overhead of traditional backend development." },
+  { question: "What are your rates?", answer: "My rates depend on the scope and complexity of the project. I offer project-based pricing and hourly consulting. Get in touch for a detailed quote tailored to your needs." },
 ];
 
 export default function FaqSection() {

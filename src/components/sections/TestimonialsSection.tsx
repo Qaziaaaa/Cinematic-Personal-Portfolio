@@ -4,9 +4,9 @@ import { Badge } from "@/components/ui/badge";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 
 const testimonials = [
-  { id: "testimonial-1", name: "Sarah L.", role: "Designer", quote: "This community transformed my design process. The AI tools are a game-changer for creating dynamic websites.", imageId: "testimonial-1" },
-  { id: "testimonial-2", name: "Mike R.", role: "Founder", quote: "I automated my entire onboarding process with an internal tool I built here. Saved me 10 hours a week!", imageId: "testimonial-2" },
-  { id: "testimonial-3", name: "Chloe T.", role: "Hobbyist", quote: "I never thought I could build something so cool without coding. The vibecoding path is so much fun!", imageId: "testimonial-3" },
+  { id: "testimonial-1", name: "Sarah L.", role: "Designer", quote: "Andy transformed my vision into a stunning, dynamic website. The AI tools he used are a game-changer.", imageId: "testimonial-1" },
+  { id: "testimonial-2", name: "Mike R.", role: "Founder", quote: "The internal tool Andy built automated our entire onboarding process. It saved me 10 hours a week!", imageId: "testimonial-2" },
+  { id: "testimonial-3", name: "Chloe T.", role: "Marketing Head", quote: "I never thought we could have something so cool without a huge dev team. The animated experience Andy built is incredible.", imageId: "testimonial-3" },
 ];
 
 export default function TestimonialsSection() {
@@ -15,10 +15,10 @@ export default function TestimonialsSection() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center">
           <h2 className="font-headline text-4xl font-bold text-foreground sm:text-5xl">
-            From Our Community
+            What My Clients Say
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
-            Hear what our members have to say about their journey with us.
+            Hear what people I've worked with have to say about their experience.
           </p>
         </div>
         <div className="mt-16 grid grid-cols-1 gap-8 lg:grid-cols-3">

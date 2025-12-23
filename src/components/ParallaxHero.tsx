@@ -65,21 +65,23 @@ export default function ParallaxHero({ onProgress, onLoaded }: ParallaxHeroProps
       return;
     }
   
-    const loadPromises: Promise<HTMLImageElement>[] = [];
-    for (let i = 0; i < TOTAL_FRAMES; i++) {
-      const promise = new Promise<HTMLImageElement>((resolve, reject) => {
+    const loadPromises = Array.from({ length: TOTAL_FRAMES }, (_, i) => {
+      return new Promise<void>((resolve, reject) => {
         const img = new Image();
         img.src = `${FRAME_URL_PREFIX}${padFrame(i)}${FRAME_URL_SUFFIX}`;
         img.onload = () => {
           imageCache.current[i] = img;
           const loadedCount = imageCache.current.filter(Boolean).length;
           onProgress((loadedCount / TOTAL_FRAMES) * 100);
-          resolve(img);
+          resolve();
         };
-        img.onerror = (err) => reject(err);
+        img.onerror = (err) => {
+          console.error(`Failed to load image ${i}:`, err);
+          // Still resolve so that Promise.all doesn't fail on a single image error
+          resolve();
+        };
       });
-      loadPromises.push(promise);
-    }
+    });
   
     try {
       await Promise.all(loadPromises);
@@ -89,7 +91,7 @@ export default function ParallaxHero({ onProgress, onLoaded }: ParallaxHeroProps
       onLoaded();
     }
   }, [onProgress, onLoaded]);
-
+  
   const drawFrame = useCallback((index: number) => {
     if (!canvasRef.current || !imageCache.current[index]) return;
     const canvas = canvasRef.current;
@@ -129,46 +131,50 @@ export default function ParallaxHero({ onProgress, onLoaded }: ParallaxHeroProps
   
   useEffect(() => {
     if (!isMounted) return;
-
+  
     let animationFrameId: number;
-
+    let isTicking = false;
+  
     const handleScroll = () => {
-      if (!heroRef.current) return;
-      const scrollY = window.scrollY;
-      const rect = heroRef.current.getBoundingClientRect();
-      const scrollTop = scrollY + rect.top;
-      const scrollHeight = heroRef.current.scrollHeight - window.innerHeight;
-      
-      let scrollFraction = 0;
-      if (scrollHeight > 0) {
-        scrollFraction = Math.min(1, Math.max(0, (scrollY - scrollTop) / scrollHeight));
-      }
-
-      const newFrameIndex = Math.min(TOTAL_FRAMES - 1, Math.max(0, Math.floor(scrollFraction * TOTAL_FRAMES)));
-      
-      if (newFrameIndex !== frameIndex.current) {
-        frameIndex.current = newFrameIndex;
-        cancelAnimationFrame(animationFrameId);
+      if (!isTicking) {
         animationFrameId = requestAnimationFrame(() => {
+          if (!heroRef.current) return;
+          const scrollY = window.scrollY;
+          const rect = heroRef.current.getBoundingClientRect();
+          const scrollTop = scrollY + rect.top;
+          const scrollHeight = heroRef.current.scrollHeight - window.innerHeight;
+  
+          let scrollFraction = 0;
+          if (scrollHeight > 0) {
+            scrollFraction = Math.min(1, Math.max(0, (scrollY - scrollTop) / scrollHeight));
+          }
+  
+          const newFrameIndex = Math.min(TOTAL_FRAMES - 1, Math.max(0, Math.floor(scrollFraction * TOTAL_FRAMES)));
+  
+          if (newFrameIndex !== frameIndex.current) {
+            frameIndex.current = newFrameIndex;
             drawFrame(frameIndex.current);
+          }
+          isTicking = false;
         });
+        isTicking = true;
       }
     };
-    
+  
     const handleResize = () => {
-        if (canvasRef.current) {
-            canvasRef.current.width = window.innerWidth;
-            canvasRef.current.height = window.innerHeight;
-            drawFrame(frameIndex.current);
-        }
+      if (canvasRef.current) {
+        canvasRef.current.width = window.innerWidth;
+        canvasRef.current.height = window.innerHeight;
+        drawFrame(frameIndex.current);
+      }
     };
-
-    window.addEventListener('scroll', handleScroll);
+  
+    window.addEventListener('scroll', handleScroll, { passive: true });
     window.addEventListener('resize', handleResize);
-    
+  
     handleScroll();
     handleResize();
-
+  
     return () => {
       window.removeEventListener('scroll', handleScroll);
       window.removeEventListener('resize', handleResize);
