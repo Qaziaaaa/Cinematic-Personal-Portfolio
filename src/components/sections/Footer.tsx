@@ -1,4 +1,4 @@
-import { CodeXml, Youtube, Instagram, Twitter } from 'lucide-react';
+import { CodeXml, Github, Instagram, Linkedin } from 'lucide-react';
 import { communityConfig } from '@/lib/config';
 
 export default function Footer() {
@@ -20,14 +20,14 @@ export default function Footer() {
             <a href="#cta" className="transition-colors hover:text-primary">Contact</a>
           </nav>
           <div className="flex justify-center space-x-6">
-            <a href={communityConfig.socials.youtube} aria-label="Youtube" className="text-muted-foreground transition-colors hover:text-primary">
-              <Youtube size={24} />
+            <a href={communityConfig.socials.linkedin} aria-label="LinkedIn" className="text-muted-foreground transition-colors hover:text-primary">
+              <Linkedin size={24} />
+            </a>
+            <a href={communityConfig.socials.github} aria-label="GitHub" className="text-muted-foreground transition-colors hover:text-primary">
+              <Github size={24} />
             </a>
             <a href={communityConfig.socials.instagram} aria-label="Instagram" className="text-muted-foreground transition-colors hover:text-primary">
               <Instagram size={24} />
-            </a>
-            <a href={communityConfig.socials.twitter} aria-label="Twitter" className="text-muted-foreground transition-colors hover:text-primary">
-              <Twitter size={24} />
             </a>
           </div>
         </div>

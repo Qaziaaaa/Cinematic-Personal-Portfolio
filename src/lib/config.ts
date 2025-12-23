@@ -14,8 +14,8 @@ export const communityConfig = {
     { id: "#04", label: "Internal Tools Automation" },
   ],
   socials: {
-    youtube: "#",
+    linkedin: "#",
+    github: "#",
     instagram: "#",
-    twitter: "#",
   }
 };

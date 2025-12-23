@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef, useCallback } from 'react';
-import { Youtube, Instagram, Twitter } from 'lucide-react';
+import { Instagram, Linkedin, Github } from 'lucide-react';
 import { communityConfig } from '@/lib/config';
 
 const TOTAL_FRAMES = 240;
@@ -44,7 +44,7 @@ export default function ParallaxHero({ onProgress, onLoaded }: ParallaxHeroProps
           onProgress((loadedCount / TOTAL_FRAMES) * 100);
           resolve();
         };
-        img.onerror = () => {
+        img.onerror = (err) => {
           // Still resolve so that Promise.all doesn't fail on a single image error
           resolve();
         };
@@ -146,7 +146,9 @@ export default function ParallaxHero({ onProgress, onLoaded }: ParallaxHeroProps
     return () => {
       window.removeEventListener('scroll', handleScroll);
       window.removeEventListener('resize', handleResize);
-      cancelAnimationFrame(animationFrameId);
+      if (animationFrameId) {
+        cancelAnimationFrame(animationFrameId);
+      }
     };
   }, [drawFrame, isMounted]);
 
@@ -166,14 +168,14 @@ export default function ParallaxHero({ onProgress, onLoaded }: ParallaxHeroProps
           </div>
 
           <div className="flex justify-center space-x-6">
-            <a href={communityConfig.socials.youtube} aria-label="Youtube" className="text-foreground/70 transition-colors hover:text-primary">
-              <Youtube size={24} />
+            <a href={communityConfig.socials.linkedin} aria-label="LinkedIn" className="text-foreground/70 transition-colors hover:text-primary">
+              <Linkedin size={24} />
+            </a>
+            <a href={communityConfig.socials.github} aria-label="GitHub" className="text-foreground/70 transition-colors hover:text-primary">
+              <Github size={24} />
             </a>
             <a href={communityConfig.socials.instagram} aria-label="Instagram" className="text-foreground/70 transition-colors hover:text-primary">
               <Instagram size={24} />
-            </a>
-            <a href={communityConfig.socials.twitter} aria-label="Twitter" className="text-foreground/70 transition-colors hover:text-primary">
-              <Twitter size={24} />
             </a>
           </div>
         </div>
