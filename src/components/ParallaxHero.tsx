@@ -64,23 +64,30 @@ export default function ParallaxHero({ onProgress, onLoaded }: ParallaxHeroProps
       onLoaded();
       return;
     }
-    const promises: Promise<void>[] = [];
+  
+    const loadPromises: Promise<HTMLImageElement>[] = [];
     for (let i = 0; i < TOTAL_FRAMES; i++) {
-      const promise = new Promise<void>((resolve, reject) => {
-        const img = new window.Image();
+      const promise = new Promise<HTMLImageElement>((resolve, reject) => {
+        const img = new Image();
         img.src = `${FRAME_URL_PREFIX}${padFrame(i)}${FRAME_URL_SUFFIX}`;
         img.onload = () => {
           imageCache.current[i] = img;
           const loadedCount = imageCache.current.filter(Boolean).length;
           onProgress((loadedCount / TOTAL_FRAMES) * 100);
-          resolve();
+          resolve(img);
         };
-        img.onerror = reject;
+        img.onerror = (err) => reject(err);
       });
-      promises.push(promise);
+      loadPromises.push(promise);
     }
-    await Promise.all(promises);
-    onLoaded();
+  
+    try {
+      await Promise.all(loadPromises);
+    } catch (error) {
+      console.error("Failed to preload images:", error);
+    } finally {
+      onLoaded();
+    }
   }, [onProgress, onLoaded]);
 
   const drawFrame = useCallback((index: number) => {
@@ -123,6 +130,8 @@ export default function ParallaxHero({ onProgress, onLoaded }: ParallaxHeroProps
   useEffect(() => {
     if (!isMounted) return;
 
+    let animationFrameId: number;
+
     const handleScroll = () => {
       if (!heroRef.current) return;
       const scrollY = window.scrollY;
@@ -135,11 +144,14 @@ export default function ParallaxHero({ onProgress, onLoaded }: ParallaxHeroProps
         scrollFraction = Math.min(1, Math.max(0, (scrollY - scrollTop) / scrollHeight));
       }
 
-      const newFrameIndex = Math.min(TOTAL_FRAMES-1, Math.max(0, Math.floor(scrollFraction * TOTAL_FRAMES)));
+      const newFrameIndex = Math.min(TOTAL_FRAMES - 1, Math.max(0, Math.floor(scrollFraction * TOTAL_FRAMES)));
       
       if (newFrameIndex !== frameIndex.current) {
         frameIndex.current = newFrameIndex;
-        requestAnimationFrame(() => drawFrame(frameIndex.current));
+        cancelAnimationFrame(animationFrameId);
+        animationFrameId = requestAnimationFrame(() => {
+            drawFrame(frameIndex.current);
+        });
       }
     };
     
@@ -160,6 +172,7 @@ export default function ParallaxHero({ onProgress, onLoaded }: ParallaxHeroProps
     return () => {
       window.removeEventListener('scroll', handleScroll);
       window.removeEventListener('resize', handleResize);
+      cancelAnimationFrame(animationFrameId);
     };
   }, [drawFrame, isMounted]);
 
