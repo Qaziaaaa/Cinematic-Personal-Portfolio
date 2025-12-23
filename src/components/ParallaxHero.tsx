@@ -4,7 +4,7 @@ import { useState, useEffect, useRef, useCallback } from 'react';
 import { Instagram, Linkedin, Github } from 'lucide-react';
 import { communityConfig } from '@/lib/config';
 
-const TOTAL_FRAMES = 230;
+const TOTAL_FRAMES = 215;
 const FRAME_URL_PREFIX = 'https://kicfhcemxzavsyfrvxgf.supabase.co/storage/v1/object/public/Webp%20sequence/frame_';
 const FRAME_URL_SUFFIX = '_delay-0.04s.webp';
 const ANIMATION_DURATION_VH = 150; // Controls scroll speed, smaller is faster
@@ -46,6 +46,7 @@ export default function ParallaxHero({ onProgress, onLoaded }: ParallaxHeroProps
           resolve();
         };
         img.onerror = () => {
+          // Still resolve so that Promise.all doesn't fail on a single image error
           resolve();
         };
       });
@@ -111,7 +112,6 @@ export default function ParallaxHero({ onProgress, onLoaded }: ParallaxHeroProps
           const rect = heroRef.current.getBoundingClientRect();
           const scrollTop = scrollY + rect.top;
           
-          // Use a fixed scroll height based on viewport height for the animation duration
           const animationScrollHeight = window.innerHeight * (ANIMATION_DURATION_VH / 100);
   
           let scrollFraction = 0;
