@@ -20,7 +20,11 @@ export default async function StudentShowcaseSection() {
     });
     highlightedWorks = curationResult.highlightedWorks;
   } catch (error) {
-    console.error("AI curation failed, using mock data as fallback:", error);
+    // AI curation can fail, so we'll use mock data as a fallback.
+    highlightedWorks = mockStudentWorks.slice(0, 3).map(work => ({...work, reason: "An outstanding example of creative application."}));
+  }
+
+  if (!highlightedWorks || highlightedWorks.length === 0) {
     highlightedWorks = mockStudentWorks.slice(0, 3).map(work => ({...work, reason: "An outstanding example of creative application."}));
   }
 
