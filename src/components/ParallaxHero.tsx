@@ -66,7 +66,7 @@ export default function ParallaxHero({ onProgress, onLoaded }: ParallaxHeroProps
     }
   
     const loadPromises = Array.from({ length: TOTAL_FRAMES }, (_, i) => {
-      return new Promise<void>((resolve, reject) => {
+      return new Promise<void>((resolve) => {
         const img = new Image();
         img.src = `${FRAME_URL_PREFIX}${padFrame(i)}${FRAME_URL_SUFFIX}`;
         img.onload = () => {
@@ -75,8 +75,7 @@ export default function ParallaxHero({ onProgress, onLoaded }: ParallaxHeroProps
           onProgress((loadedCount / TOTAL_FRAMES) * 100);
           resolve();
         };
-        img.onerror = (err) => {
-          console.error(`Failed to load image ${i}:`, err);
+        img.onerror = () => {
           // Still resolve so that Promise.all doesn't fail on a single image error
           resolve();
         };
@@ -86,7 +85,7 @@ export default function ParallaxHero({ onProgress, onLoaded }: ParallaxHeroProps
     try {
       await Promise.all(loadPromises);
     } catch (error) {
-      console.error("Failed to preload images:", error);
+      // console.error("Failed to preload images:", error);
     } finally {
       onLoaded();
     }
