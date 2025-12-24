@@ -17,7 +17,7 @@ export default function Footer() {
             <a href="#services" className="transition-colors hover:text-primary">Services</a>
             <a href="#projects" className="transition-colors hover:text-primary">Projects</a>
             <a href="#faq" className="transition-colors hover:text-primary">FAQ</a>
-            <a href="#cta" className="transition-colors hover:text-primary">Contact</a>
+            <a href="#contact" className="transition-colors hover:text-primary">Contact</a>
           </nav>
           <div className="flex justify-center space-x-6">
             <a href={communityConfig.socials.linkedin} aria-label="LinkedIn" className="text-muted-foreground transition-colors hover:text-primary">
@@ -31,7 +31,7 @@ export default function Footer() {
             </a>
           </div>
         </div>
-        <div className="mt-8 border-t border-border/50 pt-8 text-center text-sm text-muted-foreground">
+        <div id="contact" className="mt-8 border-t border-border/50 pt-8 text-center text-sm text-muted-foreground">
           &copy; {currentYear} {communityConfig.name}. All rights reserved.
         </div>
       </div>
