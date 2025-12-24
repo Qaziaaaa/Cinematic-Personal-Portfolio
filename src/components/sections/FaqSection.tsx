@@ -5,6 +5,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { DragonballPattern } from "../DragonballPattern";
+import { DragonballIcon } from "../DragonballIcon";
 
 const faqs = [
   { question: "What kind of projects do you take on?", answer: "I specialize in creating custom websites with a focus on animation and AI integration, building internal tools, and developing full-stack web applications. If you have a creative or technical challenge, I'm interested!" },
@@ -27,8 +28,13 @@ export default function FaqSection() {
           <Accordion type="single" collapsible className="w-full">
             {faqs.map((faq, index) => (
               <AccordionItem key={index} value={`item-${index}`}>
-                <AccordionTrigger className="text-lg text-left">{faq.question}</AccordionTrigger>
-                <AccordionContent className="text-base text-muted-foreground">
+                <AccordionTrigger className="text-lg text-left hover:no-underline">
+                  <div className="flex items-center gap-4">
+                    <DragonballIcon stars={index + 1} className="h-6 w-6 flex-shrink-0" />
+                    <span>{faq.question}</span>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="text-base text-muted-foreground pl-14">
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>
