@@ -25,7 +25,7 @@ export default function TestimonialsSection() {
           {testimonials.map(testimonial => {
             const testimonialImage = PlaceHolderImages.find(p => p.id === testimonial.imageId);
             return (
-              <Card key={testimonial.id} className="flex flex-col">
+              <Card key={testimonial.id} className="flex flex-col bg-primary/10 border-primary/30">
                 <CardContent className="flex flex-1 flex-col justify-between p-6">
                   <blockquote className="text-lg text-foreground">
                     "{testimonial.quote}"
@@ -43,7 +43,7 @@ export default function TestimonialsSection() {
                     )}
                     <div className="ml-4">
                       <p className="font-semibold">{testimonial.name}</p>
-                      <Badge variant="outline" className="mt-1">{testimonial.role}</Badge>
+                      <Badge variant="outline" className="mt-1 border-primary/50">{testimonial.role}</Badge>
                     </div>
                   </div>
                 </CardContent>
