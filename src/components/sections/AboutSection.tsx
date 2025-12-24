@@ -16,7 +16,7 @@ export default function AboutSection() {
 
   return (
     <section id="about" className="py-20 sm:py-32 relative overflow-hidden">
-      <DragonballPattern id="about-pattern" className="absolute inset-0 h-full w-full opacity-[0.02] [mask-image:linear-gradient(to_bottom,white_0%,transparent_100%)]" />
+      <DragonballPattern id="about-pattern" className="absolute inset-0 h-full w-full opacity-[0.04]" />
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:items-center">
           <div className="lg:order-2">
