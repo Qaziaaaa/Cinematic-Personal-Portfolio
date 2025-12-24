@@ -7,7 +7,7 @@ import { communityConfig } from '@/lib/config';
 const TOTAL_FRAMES = 115;
 const FRAME_URL_PREFIX = 'https://kicfhcemxzavsyfrvxgf.supabase.co/storage/v1/object/public/Webp%20sequence/frame_';
 const FRAME_URL_SUFFIX = '_delay-0.04s.webp';
-const ANIMATION_DURATION_VH = 300; 
+const ANIMATION_DURATION_VH = 400; 
 
 const padFrame = (frame: number) => frame.toString().padStart(3, '0');
 
@@ -164,10 +164,10 @@ export default function ParallaxHero({ onProgress, onLoaded }: ParallaxHeroProps
         <div className="relative z-10 mx-auto flex h-full max-w-5xl flex-col justify-center px-4 text-foreground sm:px-6 lg:px-8">
           
           <div className="max-w-sm">
-            <h1 className="text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl font-headline">
+            <h1 className="font-headline text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">
               {communityConfig.introLine}
             </h1>
-            <p className="mt-4 text-base leading-7 text-gray-300">
+            <p className="mt-4 text-lg leading-7 text-gray-300">
               {communityConfig.description}
             </p>
           </div>
