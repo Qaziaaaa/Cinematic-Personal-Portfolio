@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { DragonballPattern } from "../DragonballPattern";
 
 const projects = [
   { title: "Project Nebula", description: "A scroll-animated website about space exploration.", imageUrl: "https://picsum.photos/seed/showcase1/600/400", studentName: "Client Project", tags: ["animation", "web design"], reason: "A deep dive into celestial animations and storytelling." },
@@ -14,8 +15,9 @@ export default async function StudentShowcaseSection() {
   const featuredProjects = projects.slice(0, 3);
 
   return (
-    <section id="projects" className="py-20 sm:py-32">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <section id="projects" className="py-20 sm:py-32 relative overflow-hidden">
+      <DragonballPattern id="projects-pattern" className="absolute inset-0 h-full w-full opacity-[0.02] [mask-image:linear-gradient(to_bottom,white_0%,transparent_100%)]" />
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative">
         <div className="text-center">
           <h2 className="font-headline text-4xl font-bold text-foreground sm:text-5xl">
             Featured Projects

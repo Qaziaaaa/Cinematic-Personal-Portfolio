@@ -2,17 +2,19 @@ import Image from "next/image";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
+import { DragonballPattern } from "../DragonballPattern";
 
 const testimonials = [
-  { id: "testimonial-1", name: "Sarah L.", role: "Designer", quote: "Andy transformed my vision into a stunning, dynamic website. The AI tools he used are a game-changer.", imageId: "testimonial-1" },
-  { id: "testimonial-2", name: "Mike R.", role: "Founder", quote: "The internal tool Andy built automated our entire onboarding process. It saved me 10 hours a week!", imageId: "testimonial-2" },
-  { id: "testimonial-3", name: "Chloe T.", role: "Marketing Head", quote: "I never thought we could have something so cool without a huge dev team. The animated experience Andy built is incredible.", imageId: "testimonial-3" },
+  { id: "testimonial-1", name: "Sarah L.", role: "Designer", quote: "Qazi transformed my vision into a stunning, dynamic website. The AI tools he used are a game-changer.", imageId: "testimonial-1" },
+  { id: "testimonial-2", name: "Mike R.", role: "Founder", quote: "The internal tool Qazi built automated our entire onboarding process. It saved me 10 hours a week!", imageId: "testimonial-2" },
+  { id: "testimonial-3", name: "Chloe T.", role: "Marketing Head", quote: "I never thought we could have something so cool without a huge dev team. The animated experience Qazi built is incredible.", imageId: "testimonial-3" },
 ];
 
 export default function TestimonialsSection() {
   return (
-    <section id="testimonials" className="py-20 sm:py-32 bg-card/50">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <section id="testimonials" className="py-20 sm:py-32 bg-card/50 relative overflow-hidden">
+      <DragonballPattern id="testimonials-pattern" className="absolute inset-0 h-full w-full opacity-[0.02] [mask-image:linear-gradient(to_bottom,white_0%,transparent_100%)]" />
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative">
         <div className="text-center">
           <h2 className="font-headline text-4xl font-bold text-foreground sm:text-5xl">
             What My Clients Say
