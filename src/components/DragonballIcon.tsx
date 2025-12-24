@@ -31,7 +31,7 @@ export function DragonballIcon({ stars = 1, className }: { stars?: number; class
       </defs>
       <circle cx="12" cy="12" r="11" stroke="rgba(0,0,0,0.3)" strokeWidth="0.5" fill="url(#grad1)" />
       <circle cx="12" cy="12" r="11" fill="currentColor" fillOpacity="0.3" />
-      <path d={starPath} fill="#C04000" transform="translate(0 0.5) scale(1.3) translate(-3.5 -3.5)" stroke="rgba(0,0,0,0.2)" strokeWidth="0.1"/>
+      <path d={starPath} fill="#A52A2A" transform="translate(0 0.5) scale(1.3) translate(-3.5 -3.5)" stroke="rgba(0,0,0,0.2)" strokeWidth="0.1"/>
     </svg>
   );
 }
