@@ -7,7 +7,7 @@ import { communityConfig } from '@/lib/config';
 const TOTAL_FRAMES = 115;
 const FRAME_URL_PREFIX = 'https://kicfhcemxzavsyfrvxgf.supabase.co/storage/v1/object/public/Webp%20sequence/frame_';
 const FRAME_URL_SUFFIX = '_delay-0.04s.webp';
-const ANIMATION_DURATION_VH = 150; 
+const ANIMATION_DURATION_VH = 300; 
 
 const padFrame = (frame: number) => frame.toString().padStart(3, '0');
 
