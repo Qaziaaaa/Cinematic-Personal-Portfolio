@@ -4,7 +4,7 @@ import { Toaster } from "@/components/ui/toaster";
 import Navbar from '@/components/Navbar';
 
 export const metadata: Metadata = {
-  title: 'Andy - Creative Developer & AI Specialist',
+  title: 'Qazi - Creative Developer & AI Specialist',
   description: 'A personal portfolio showcasing creative development, AI-powered web apps, and animated web experiences.',
 };
 

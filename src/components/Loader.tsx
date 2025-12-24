@@ -10,7 +10,7 @@ export default function Loader({ progress, loading }: { progress: number, loadin
     >
       <div className="w-full max-w-xs text-center">
         <CodeXml className="mx-auto h-16 w-16 text-primary animate-pulse" />
-        <h1 className="mt-4 text-2xl font-headline text-foreground">Andynocode AI Studio</h1>
+        <h1 className="mt-4 text-2xl font-headline text-foreground">Qazi AI Studio</h1>
         <p className="text-muted-foreground mt-2">Loading cinematic experience...</p>
         <Progress value={progress} className="mt-4 h-2" />
         <p className="mt-2 text-sm text-muted-foreground">{Math.round(progress)}%</p>
