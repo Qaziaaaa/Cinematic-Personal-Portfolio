@@ -4,6 +4,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { DragonballPattern } from "../DragonballPattern";
 
 const faqs = [
   { question: "What kind of projects do you take on?", answer: "I specialize in creating custom websites with a focus on animation and AI integration, building internal tools, and developing full-stack web applications. If you have a creative or technical challenge, I'm interested!" },
@@ -14,8 +15,9 @@ const faqs = [
 
 export default function FaqSection() {
   return (
-    <section id="faq" className="py-20 sm:py-32">
-      <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+    <section id="faq" className="py-20 sm:py-32 relative overflow-hidden">
+      <DragonballPattern id="faq-pattern" className="absolute inset-0 h-full w-full opacity-[0.04]" />
+      <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 relative">
         <div className="text-center">
           <h2 className="font-headline text-4xl font-bold text-foreground sm:text-5xl">
             Frequently Asked Questions
