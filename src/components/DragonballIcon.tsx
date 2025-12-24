@@ -24,14 +24,14 @@ export function DragonballIcon({ stars = 1, className }: { stars?: number; class
     >
       <defs>
         <radialGradient id="grad1" cx="50%" cy="40%" r="60%" fx="50%" fy="40%">
-          <stop offset="0%" style={{ stopColor: 'hsl(var(--primary) / 0.7)', stopOpacity: 1 }} />
+          <stop offset="0%" style={{ stopColor: '#FFD700', stopOpacity: 0.8 }} />
           <stop offset="60%" style={{ stopColor: 'hsl(var(--primary))', stopOpacity: 1 }} />
-          <stop offset="100%" style={{ stopColor: 'hsl(var(--primary) / 1.2)', stopOpacity: 1 }} />
+          <stop offset="100%" style={{ stopColor: '#E65100', stopOpacity: 1 }} />
         </radialGradient>
       </defs>
-      <circle cx="12" cy="12" r="10" fill="url(#grad1)" />
-      <circle cx="12" cy="12" r="10" fill="currentColor" fillOpacity="0.5" />
-      <path d={starPath} fill="hsl(var(--primary-foreground))" transform="translate(0 0.5) scale(1.3) translate(-3.5 -3.5)" stroke="rgba(0,0,0,0.2)" strokeWidth="0.1"/>
+      <circle cx="12" cy="12" r="11" stroke="rgba(0,0,0,0.3)" strokeWidth="0.5" fill="url(#grad1)" />
+      <circle cx="12" cy="12" r="11" fill="currentColor" fillOpacity="0.3" />
+      <path d={starPath} fill="#C04000" transform="translate(0 0.5) scale(1.3) translate(-3.5 -3.5)" stroke="rgba(0,0,0,0.2)" strokeWidth="0.1"/>
     </svg>
   );
 }

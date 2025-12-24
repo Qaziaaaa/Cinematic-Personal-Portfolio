@@ -30,11 +30,11 @@ export default function FaqSection() {
               <AccordionItem key={index} value={`item-${index}`}>
                 <AccordionTrigger className="text-lg text-left hover:no-underline">
                   <div className="flex items-center gap-4">
-                    <DragonballIcon stars={index + 1} className="h-6 w-6 flex-shrink-0" />
+                    <DragonballIcon stars={index + 1} className="h-8 w-8 flex-shrink-0" />
                     <span>{faq.question}</span>
                   </div>
                 </AccordionTrigger>
-                <AccordionContent className="text-base text-muted-foreground pl-14">
+                <AccordionContent className="text-base text-muted-foreground pl-16">
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>
