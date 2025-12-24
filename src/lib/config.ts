@@ -1,8 +1,8 @@
 export const communityConfig = {
   name: "Qazi's Portfolio",
   tagline: "Building Digital Experiences with AI and Animation.",
-  description: "I combine design, automation, and AI to create modern, scroll-animated websites, internal tools, and full AI-driven products. Let's build something amazing together.",
-  introLine: "Hey, I'm Qazi",
+  description: "I create modern, responsive, and accessible web interfaces that users love.",
+  introLine: "Hi, I’m Qazi Farhan Ahmad — a Frontend Developer.",
   mainTitle: {
     line1: "Creative Developer",
     line2: "& AI Specialist"
