@@ -2,9 +2,9 @@
   "placeholderImages": [
     {
       "id": "about-portrait",
-      "description": "Abstract portrait for the about section",
-      "imageUrl": "https://i.postimg.cc/pdb5v5XG/Whisk-8841449e5aa5841af7b47387ce85ffcbdr-1.png",
-      "imageHint": "portrait abstract"
+      "description": "Goku portrait for the about section",
+      "imageUrl": "https://i.postimg.cc/nLKMqq6g/Goku-About.jpg",
+      "imageHint": "goku portrait"
     },
     {
       "id": "path-animated-websites",
