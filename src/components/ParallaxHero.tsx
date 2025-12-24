@@ -4,10 +4,10 @@ import { useState, useEffect, useRef, useCallback } from 'react';
 import { Instagram, Linkedin, Github } from 'lucide-react';
 import { communityConfig } from '@/lib/config';
 
-const TOTAL_FRAMES = 190;
+const TOTAL_FRAMES = 165;
 const FRAME_URL_PREFIX = 'https://kicfhcemxzavsyfrvxgf.supabase.co/storage/v1/object/public/Webp%20sequence/frame_';
 const FRAME_URL_SUFFIX = '_delay-0.04s.webp';
-const ANIMATION_DURATION_VH = 150; // Controls scroll speed, smaller is faster
+const ANIMATION_DURATION_VH = 150; 
 
 const padFrame = (frame: number) => frame.toString().padStart(3, '0');
 
@@ -46,7 +46,6 @@ export default function ParallaxHero({ onProgress, onLoaded }: ParallaxHeroProps
           resolve();
         };
         img.onerror = () => {
-          // Still resolve so that Promise.all doesn't fail on a single image error
           resolve();
         };
       });
@@ -68,31 +67,38 @@ export default function ParallaxHero({ onProgress, onLoaded }: ParallaxHeroProps
     if (!context) return;
     
     const img = imageCache.current[index];
-    const canvasAspect = canvas.width / canvas.height;
+    const dpr = window.devicePixelRatio || 1;
+    const rect = canvas.getBoundingClientRect();
+  
+    canvas.width = rect.width * dpr;
+    canvas.height = rect.height * dpr;
+
+    context.scale(dpr, dpr);
+    canvas.style.width = `${rect.width}px`;
+    canvas.style.height = `${rect.height}px`;
+
+    const canvasAspect = rect.width / rect.height;
     const imgAspect = img.width / img.height;
 
     let sx = 0, sy = 0, sWidth = img.width, sHeight = img.height;
-
-    if (imgAspect > canvasAspect) {
-      sHeight = img.height;
-      sWidth = sHeight * canvasAspect;
-      sx = (img.width - sWidth) / 2;
-    } else {
-      sWidth = img.width;
-      sHeight = sWidth / canvasAspect;
-      sy = (img.height - sHeight) / 2;
+    if (imgAspect > canvasAspect) { // Image is wider than canvas
+        sHeight = img.height;
+        sWidth = img.height * canvasAspect;
+        sx = (img.width - sWidth) / 2;
+    } else { // Image is taller than canvas
+        sWidth = img.width;
+        sHeight = img.width / canvasAspect;
+        sy = (img.height - sHeight) / 2;
     }
     
-    context.clearRect(0, 0, canvas.width, canvas.height);
-    context.drawImage(img, sx, sy, sWidth, sHeight, 0, 0, canvas.width, canvas.height);
+    context.clearRect(0, 0, rect.width, rect.height);
+    context.drawImage(img, sx, sy, sWidth, sHeight, 0, 0, rect.width, rect.height);
   }, []);
   
   useEffect(() => {
     if (!isMounted) return;
     preloadImages().then(() => {
       if (canvasRef.current) {
-        canvasRef.current.width = window.innerWidth;
-        canvasRef.current.height = window.innerHeight;
         drawFrame(0);
       }
     });
@@ -133,8 +139,6 @@ export default function ParallaxHero({ onProgress, onLoaded }: ParallaxHeroProps
   
     const handleResize = () => {
       if (canvasRef.current) {
-        canvasRef.current.width = window.innerWidth;
-        canvasRef.current.height = window.innerHeight;
         drawFrame(frameIndex.current);
       }
     };
