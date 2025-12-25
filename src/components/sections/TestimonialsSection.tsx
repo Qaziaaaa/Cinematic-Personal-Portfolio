@@ -21,13 +21,13 @@ export default function TestimonialsSection() {
         />
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center">
-          <h2 className="font-headline text-4xl font-bold text-foreground sm:text-5xl">
-            What Clients Say
-          </h2>
-           <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
-            Real experiences from people I’ve helped build powerful digital products.
-          </p>
-          <div className="mt-4 h-[2px] w-24 bg-primary/50 mx-auto rounded-full shadow-[0_0_15px_theme(colors.primary/0.5)]" />
+            <p className="font-headline text-sm uppercase tracking-widest text-primary">Testimonials</p>
+            <h2 className="mt-2 font-headline text-4xl font-bold text-foreground sm:text-5xl">
+                What Clients Say
+            </h2>
+            <p className="mx-auto mt-6 max-w-3xl text-lg text-muted-foreground">
+                Real experiences from people I’ve helped build powerful digital products.
+            </p>
         </div>
 
         <div className="mt-20 grid grid-cols-1 gap-16 lg:grid-cols-3 lg:gap-8">
