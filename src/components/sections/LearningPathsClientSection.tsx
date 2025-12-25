@@ -55,10 +55,11 @@ export default function LearningPathsClientSection() {
         />
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center">
-          <h2 className="font-headline text-4xl font-bold text-foreground sm:text-5xl">
-            What I Do
+          <p className="font-headline text-sm uppercase tracking-widest text-primary">What I do</p>
+          <h2 className="mt-2 font-headline text-4xl font-bold text-foreground sm:text-5xl">
+            My Services
           </h2>
-          <p className="mx-auto mt-4 max-w-3xl text-lg text-muted-foreground">
+          <p className="mx-auto mt-6 max-w-3xl text-lg text-muted-foreground">
             I build powerful digital experiences that blend design, motion, and artificial intelligence.
           </p>
         </div>
