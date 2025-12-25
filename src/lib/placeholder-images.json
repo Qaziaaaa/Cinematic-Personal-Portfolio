@@ -2,9 +2,9 @@
   "placeholderImages": [
     {
       "id": "about-portrait",
-      "description": "Goku portrait for the about section",
+      "description": "A powerful anime-style character with glowing energy",
       "imageUrl": "https://i.ibb.co/PzNWcGGn/Goku-ultra-clean-12-MB.jpg",
-      "imageHint": "goku portrait"
+      "imageHint": "anime warrior energy"
     },
     {
       "id": "path-animated-websites",
