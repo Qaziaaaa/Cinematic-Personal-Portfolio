@@ -37,7 +37,7 @@ export default function AboutSection() {
                   className="object-contain object-center"
                   data-ai-hint={aboutImage.imageHint}
                 />
-                <div className="absolute inset-0 bg-gradient-to-r from-background via-background/50 to-transparent lg:bg-gradient-to-t lg:from-background lg:via-transparent lg:to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-background via-primary/10 to-transparent lg:bg-gradient-to-t lg:from-background lg:via-primary/5 lg:to-transparent"></div>
                  <div className="absolute bottom-1/2 right-10 h-24 w-24 animate-glow-hand rounded-full bg-primary/30 blur-2xl"></div>
               </>
             )}
