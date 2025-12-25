@@ -99,6 +99,11 @@ export default {
         'glow-hand': {
             '0%, 100%': { transform: 'scale(1)', opacity: '0.3' },
             '50%': { transform: 'scale(1.5)', opacity: '0.5' },
+        },
+        'float': {
+            '0%': { transform: 'translateY(0px)' },
+            '50%': { transform: 'translateY(-10px)' },
+            '100%': { transform: 'translateY(0px)' },
         }
       },
       animation: {
@@ -107,6 +112,7 @@ export default {
         'pulse-slow': 'pulse-slow 2.5s cubic-bezier(0.4, 0, 0.6, 1) infinite',
         'pulse-slower': 'pulse-slower 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
         'glow-hand': 'glow-hand 4s ease-in-out infinite',
+        'float': 'float 6s ease-in-out infinite',
       },
     },
   },
