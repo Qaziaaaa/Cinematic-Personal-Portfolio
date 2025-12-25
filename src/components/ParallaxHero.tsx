@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { Instagram, Linkedin, Github } from 'lucide-react';
 import { communityConfig } from '@/lib/config';
+import { cn } from '@/lib/utils';
 
 const TOTAL_FRAMES = 145;
 const FRAME_URL_PREFIX = 'https://kicfhcemxzavsyfrvxgf.supabase.co/storage/v1/object/public/Webp%20sequence/frame_';
@@ -159,7 +160,14 @@ export default function ParallaxHero({ onProgress, onLoaded }: ParallaxHeroProps
   return (
     <div ref={heroRef} style={{ height: `${ANIMATION_DURATION_VH + 100}vh` }} className="relative w-full">
       <div className="sticky top-0 h-screen w-full overflow-hidden rounded-b-2xl">
-        <canvas ref={canvasRef} className="absolute inset-0 h-full w-full" />
+        <canvas 
+          ref={canvasRef} 
+          className={cn(
+            "absolute inset-0 h-full w-full",
+            "filter contrast-[1.1] saturate-[1.1] brightness-100",
+            "[--glow-color:hsl(var(--primary)/0.1)] [filter:drop-shadow(0_0_10px_var(--glow-color))]"
+          )}
+        />
         <div className="absolute inset-0 bg-black/40" />
         <div className="relative z-10 mx-auto flex h-full max-w-5xl flex-col justify-center px-4 text-foreground sm:px-6 lg:px-8">
           
