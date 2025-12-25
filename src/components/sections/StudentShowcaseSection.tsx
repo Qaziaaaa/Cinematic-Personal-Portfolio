@@ -54,7 +54,7 @@ export default async function StudentShowcaseSection() {
                   alt={work.title}
                   width={600}
                   height={400}
-                  className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                  className="h-full w-full object-cover transition-transform group-hover:scale-110"
                   data-ai-hint="student project"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-transparent" />
