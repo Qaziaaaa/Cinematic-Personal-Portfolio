@@ -60,7 +60,7 @@ export default async function StudentShowcaseSection() {
           {projects.map((work, index) => {
             const projectImage = PlaceHolderImages.find(p => p.id === work.imageId);
             return (
-              <a href="#" key={index} className="group block rounded-2xl transition-all duration-300 ease-in-out hover:!opacity-100 lg:hover:scale-105">
+              <a href="#" key={index} className="group block rounded-2xl transition-all duration-300 ease-in-out hover:!opacity-100">
                 <div className={cn(
                   "relative w-full overflow-hidden rounded-2xl border border-primary/20 bg-secondary transition-all duration-500",
                   "shadow-[0_0_20px_theme(colors.black)]",
