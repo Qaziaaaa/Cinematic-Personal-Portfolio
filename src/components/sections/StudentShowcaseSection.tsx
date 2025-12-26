@@ -95,10 +95,10 @@ export default async function StudentShowcaseSection() {
                           src={projectImage.imageUrl}
                           alt={work.title}
                           fill
-                          className="object-cover transition-all duration-500 ease-in-out group-hover:scale-110 grayscale group-hover:grayscale-0"
+                          className="object-cover transition-all duration-500 ease-in-out group-hover:scale-110"
                           data-ai-hint={projectImage.imageHint}
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-secondary via-secondary/50 to-transparent md:bg-gradient-to-r md:from-secondary md:via-secondary/50 md:to-transparent" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-secondary via-secondary/50 to-transparent md:bg-gradient-to-r md:from-secondary md:via-secondary/50 md:to-transparent transition-all duration-500 ease-in-out group-hover:scale-110" />
                       </div>
                     )}
                   </div>
