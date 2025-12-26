@@ -7,28 +7,22 @@
       "imageHint": "anime warrior energy"
     },
     {
-      "id": "path-animated-websites",
-      "description": "Thumbnail for animated websites learning path",
-      "imageUrl": "https://images.unsplash.com/photo-1645323927890-ebc1462c12c8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHx3ZWJzaXRlJTIwYW5pbWF0aW9ufGVufDB8fHx8MTc2NjQ3MjA4M3ww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "website animation"
+      "id": "project-nebula",
+      "description": "Abstract nebula for project background",
+      "imageUrl": "https://images.unsplash.com/photo-1754851582381-04fe7bedd618?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxhYnN0cmFjdCUyMG5lYnVsYXxlbnwwfHx8fDE3NjY3NDQ0MTl8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "abstract nebula"
     },
     {
-      "id": "path-ai-builders",
-      "description": "Thumbnail for AI website builders learning path",
-      "imageUrl": "https://images.unsplash.com/photo-1664809479650-d52650c04ce8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxBSSUyMGJ1aWxkZXJ8ZW58MHx8fHwxNzY2NTA3NjM0fDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "AI builder"
+      "id": "project-ai-recipe",
+      "description": "Modern kitchen for AI recipe generator",
+      "imageUrl": "https://images.unsplash.com/photo-1632583824020-937ae9564495?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxtb2Rlcm4lMjBraXRjaGVufGVufDB8fHx8MTc2NjY5OTQxMHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "modern kitchen"
     },
     {
-      "id": "path-internal-tools",
-      "description": "Thumbnail for internal AI tools learning path",
-      "imageUrl": "https://images.unsplash.com/photo-1731246164682-867af4a1a2b1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxpbnRlcm5hbCUyMHRvb2xzfGVufDB8fHx8MTc2NjUwNzYzNHww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "internal tools"
-    },
-    {
-      "id": "path-ai-apps",
-      "description": "Thumbnail for AI app development learning path",
-      "imageUrl": "https://images.unsplash.com/photo-1746286721753-fde48e5d1314?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxBSSUyMGFwcHxlbnwwfHx8fDE3NjY1MDc2MzR8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "AI app"
+      "id": "project-sales-dashboard",
+      "description": "Data visualization for sales dashboard",
+      "imageUrl": "https://images.unsplash.com/photo-1584291527908-033f4d6542c8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxkYXRhJTIwdmlzdWFsaXphdGlvbnxlbnwwfHx8fDE3NjY2OTU2MTl8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "data visualization"
     },
     {
       "id": "testimonial-1",
