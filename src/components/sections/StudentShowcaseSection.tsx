@@ -1,8 +1,9 @@
 import Image from "next/image";
 import { Badge } from "@/components/ui/badge";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Eye } from "lucide-react";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
 
 const projects = [
   { 
@@ -61,16 +62,21 @@ export default async function StudentShowcaseSection() {
             return (
               <a href="#" key={index} className="group block rounded-2xl transition-all duration-300 ease-in-out hover:!opacity-100 lg:hover:scale-105">
                 <div className={cn(
-                  "relative w-full overflow-hidden rounded-2xl border border-primary/20 bg-card/50 backdrop-blur-md transition-all duration-500",
+                  "relative w-full overflow-hidden rounded-2xl border border-primary/20 bg-secondary transition-all duration-500",
                   "shadow-[0_0_20px_theme(colors.black)]",
-                  "group-hover:border-primary/40 group-hover:shadow-[0_0_40px_theme(colors.primary/0.2)]"
+                  "group-hover:border-primary/40 group-hover:shadow-[0_0_40px_theme(colors.primary/0.2)] hover:bg-card"
                 )}>
                   <div className="grid grid-cols-1 md:grid-cols-2">
                     {/* Content */}
                     <div className="flex flex-col justify-center p-8 md:p-12 order-2 md:order-1">
                       <div>
-                        <p className="font-headline text-sm font-medium text-primary">{work.type}</p>
-                        <h3 className="mt-2 font-headline text-3xl font-bold text-foreground transition-colors duration-300 group-hover:text-white">{work.title}</h3>
+                        <div className="flex items-center gap-4">
+                            <h3 className="font-headline text-3xl font-bold text-foreground transition-colors duration-300 group-hover:text-white">{work.title}</h3>
+                            <Button variant="ghost" size="icon" className="h-8 w-8 text-muted-foreground transition-colors hover:text-primary">
+                                <Eye className="h-5 w-5" />
+                            </Button>
+                        </div>
+                        <p className="font-headline text-sm font-medium text-primary mt-1">{work.type}</p>
                         <p className="mt-4 text-muted-foreground transition-colors duration-300 group-hover:text-foreground/80">{work.description}</p>
                       </div>
                       <div className="mt-6 flex flex-wrap gap-2">
@@ -89,10 +95,10 @@ export default async function StudentShowcaseSection() {
                           src={projectImage.imageUrl}
                           alt={work.title}
                           fill
-                          className="object-cover transition-transform duration-500 ease-in-out group-hover:scale-105"
+                          className="object-cover transition-all duration-500 ease-in-out group-hover:scale-110 grayscale group-hover:grayscale-0"
                           data-ai-hint={projectImage.imageHint}
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-card via-card/50 to-transparent md:bg-gradient-to-r md:from-card md:via-card/50 md:to-transparent" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-secondary via-secondary/50 to-transparent md:bg-gradient-to-r md:from-secondary md:via-secondary/50 md:to-transparent" />
                       </div>
                     )}
                   </div>
