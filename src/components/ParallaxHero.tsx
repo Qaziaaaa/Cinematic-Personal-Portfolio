@@ -81,11 +81,9 @@ export default function ParallaxHero({ onProgress, onLoaded }: ParallaxHeroProps
 
     let sx = 0, sy = 0, sWidth = img.naturalWidth, sHeight = img.naturalHeight;
     if (imgAspect > canvasAspect) { // Image is wider than canvas
-        sHeight = img.naturalHeight;
         sWidth = img.naturalHeight * canvasAspect;
         sx = (img.naturalWidth - sWidth) / 2;
     } else { // Image is taller than canvas
-        sWidth = img.naturalWidth;
         sHeight = img.naturalWidth / canvasAspect;
         sy = (img.naturalHeight - sHeight) / 2;
     }
