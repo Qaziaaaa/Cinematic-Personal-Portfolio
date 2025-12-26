@@ -82,9 +82,9 @@ export default async function StudentShowcaseSection() {
                             {tag}
                           </Badge>
                         )}
-                        <Button variant="ghost" size="icon" className="h-8 w-8 text-muted-foreground transition-colors hover:text-primary">
-                            <Eye className="h-5 w-5" />
-                        </Button>
+                        <Badge variant="outline" className="h-8 w-8 p-0 items-center justify-center border-primary/20 bg-primary/10 text-primary/80 transition-colors duration-300 group-hover:border-primary/50 group-hover:bg-primary/20 group-hover:text-primary cursor-pointer">
+                            <Eye className="h-4 w-4" />
+                        </Badge>
                       </div>
                     </div>
 
