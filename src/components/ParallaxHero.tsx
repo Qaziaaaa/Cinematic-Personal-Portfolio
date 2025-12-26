@@ -6,7 +6,7 @@ import { communityConfig } from '@/lib/config';
 import { cn } from '@/lib/utils';
 
 const TOTAL_FRAMES = 145;
-const FRAME_URL_PREFIX = 'https://kicfhcemxzavsyfrvxgf.supabase.co/storage/v1/object/public/Webp%20sequence/frame_';
+const FRAME_URL_PREFIX = 'https://ulwhdamdqetadrsffoxq.supabase.co/storage/v1/object/public/Webp%20sequence/frame_';
 const FRAME_URL_SUFFIX = '_delay-0.04s.webp';
 const ANIMATION_DURATION_VH = 400; 
 
