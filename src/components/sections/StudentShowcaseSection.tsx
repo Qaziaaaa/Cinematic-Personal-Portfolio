@@ -72,19 +72,19 @@ export default async function StudentShowcaseSection() {
                       <div>
                         <div className="flex items-center gap-4">
                             <h3 className="font-headline text-3xl font-bold text-foreground transition-colors duration-300 group-hover:text-white">{work.title}</h3>
-                            <Button variant="ghost" size="icon" className="h-8 w-8 text-muted-foreground transition-colors hover:text-primary">
-                                <Eye className="h-5 w-5" />
-                            </Button>
                         </div>
                         <p className="font-headline text-sm font-medium text-primary mt-1">{work.type}</p>
                         <p className="mt-4 text-muted-foreground transition-colors duration-300 group-hover:text-foreground/80">{work.description}</p>
                       </div>
-                      <div className="mt-6 flex flex-wrap gap-2">
+                      <div className="mt-6 flex flex-wrap items-center gap-4">
                         {work.tags.map((tag: string) => 
                           <Badge key={tag} variant="outline" className="border-primary/20 bg-primary/10 text-primary/80 transition-colors duration-300 group-hover:border-primary/50 group-hover:bg-primary/20 group-hover:text-primary">
                             {tag}
                           </Badge>
                         )}
+                        <Button variant="ghost" size="icon" className="h-8 w-8 text-muted-foreground transition-colors hover:text-primary">
+                            <Eye className="h-5 w-5" />
+                        </Button>
                       </div>
                     </div>
 
