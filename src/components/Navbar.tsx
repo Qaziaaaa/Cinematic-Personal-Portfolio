@@ -17,7 +17,7 @@ function Logo() {
     return (
         <div className="flex items-center font-headline text-xl font-bold">
             <span className="text-primary font-bold text-2xl">{'{'}</span>
-            <span className="mx-1">Qazi</span>
+            <span className="mx-1 uppercase">Qazi</span>
             <span className="text-primary font-bold text-2xl">{'}'}</span>
         </div>
     )
