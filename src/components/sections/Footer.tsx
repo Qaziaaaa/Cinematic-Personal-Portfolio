@@ -31,7 +31,7 @@ export default function Footer() {
             </a>
           </div>
         </div>
-        <div id="contact" className="mt-8 border-t border-border/50 pt-8 text-center text-sm text-muted-foreground">
+        <div className="mt-8 border-t border-border/50 pt-8 text-center text-sm text-muted-foreground">
           &copy; {currentYear} {communityConfig.name}. All rights reserved.
         </div>
       </div>

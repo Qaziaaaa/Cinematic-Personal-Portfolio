@@ -5,7 +5,7 @@ import LearningPathsSection from '@/components/sections/LearningPathsSection';
 import StudentShowcaseSection from '@/components/sections/StudentShowcaseSection';
 import TestimonialsSection from '@/components/sections/TestimonialsSection';
 import FaqClientSection from '@/components/sections/FaqClientSection';
-import CtaSection from '@/components/sections/CtaSection';
+import ContactSection from '@/components/sections/ContactSection';
 import Footer from '@/components/sections/Footer';
 
 export default async function Home() {
@@ -18,7 +18,7 @@ export default async function Home() {
         <StudentShowcaseSection />
         <TestimonialsSection />
         <FaqClientSection />
-        <CtaSection />
+        <ContactSection />
         <Footer />
       </main>
     </PageClient>
