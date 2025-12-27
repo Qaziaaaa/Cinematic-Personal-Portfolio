@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { Menu, X } from 'lucide-react';
 import { Button } from './ui/button';
 import { cn } from '@/lib/utils';
+import Logo from './Logo';
 
 const navLinks = [
   { href: '#about', label: 'About' },
@@ -12,16 +13,6 @@ const navLinks = [
   { href: '#projects', label: 'Projects' },
   { href: '#contact', label: 'Contact' },
 ];
-
-function Logo() {
-    return (
-        <div className="flex items-center font-headline text-2xl font-bold">
-            <span className="text-primary font-bold text-3xl">{'{'}</span>
-            <span className="mx-1 uppercase">Qazi</span>
-            <span className="text-primary font-bold text-3xl">{'}'}</span>
-        </div>
-    )
-}
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);

@@ -1,5 +1,6 @@
-import { CodeXml, Github, Instagram, Linkedin } from 'lucide-react';
+import { Github, Instagram, Linkedin } from 'lucide-react';
 import { communityConfig } from '@/lib/config';
+import Logo from '../Logo';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -9,8 +10,7 @@ export default function Footer() {
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
         <div className="flex flex-col items-center justify-between gap-8 md:flex-row">
           <div className="flex items-center gap-2">
-            <CodeXml className="h-6 w-6 text-primary" />
-            <span className="font-headline text-xl font-bold">{communityConfig.name}</span>
+            <Logo />
           </div>
           <nav className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm text-muted-foreground">
             <a href="#about" className="transition-colors hover:text-primary">About</a>
