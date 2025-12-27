@@ -20,7 +20,7 @@ function Logo() {
             <ChevronLeft className="h-6 w-6 text-primary" strokeWidth={3} />
             <span className="mx-[-4px]">Qazi</span>
             <div className="relative inline-flex items-center">
-                <Slash className="h-6 w-6 text-primary/80" strokeWidth={3} style={{ transform: 'scaleX(-1) translateX(2px)' }}/>
+                <Slash className="h-6 w-6 text-primary/80" strokeWidth={3} />
                 <ChevronRight className="h-6 w-6 text-primary ml-[-11px]" strokeWidth={3} />
             </div>
         </div>
