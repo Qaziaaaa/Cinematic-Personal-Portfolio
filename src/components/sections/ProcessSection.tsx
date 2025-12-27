@@ -42,15 +42,15 @@ export default function ProcessSection() {
             </div>
 
             <div className="relative mt-20">
-              <div className="absolute left-1/2 -translate-x-1/2 h-full w-px bg-primary/20"></div>
+              <div className="absolute left-1/2 top-4 -translate-x-1/2 h-[calc(100%-2rem)] w-px bg-primary/20"></div>
               <div className="space-y-16">
                 {processSteps.map((step, index) => {
                   const Icon = step.icon;
                   const isEven = index % 2 === 0;
                   return (
-                    <div key={index} className="relative flex items-center justify-center">
-                      <div className={`w-1/2 ${isEven ? 'pr-8' : 'pl-8'}`}>
-                        <div className={`p-8 group relative rounded-2xl bg-card/80 backdrop-blur-sm border border-primary/20 transition-all duration-300 hover:border-primary/40 hover:-translate-y-2 hover:shadow-[0_0_40px_theme(colors.primary/0.2)] ${isEven ? 'text-right' : 'text-left'}`}>
+                    <div key={index} className="relative flex items-center">
+                      <div className={`w-1/2 flex ${isEven ? 'justify-end pr-8' : 'justify-start pl-8'}`}>
+                        <div className={`p-8 w-[calc(100%-2rem)] group relative rounded-2xl bg-card/80 backdrop-blur-sm border border-primary/20 transition-all duration-300 hover:border-primary/40 hover:-translate-y-2 hover:shadow-[0_0_40px_theme(colors.primary/0.2)] ${isEven ? 'text-right' : 'text-left'}`}>
                           <div className={`absolute top-4 text-5xl font-bold text-primary/10 transition-colors duration-300 group-hover:text-primary/20 ${isEven ? 'left-4' : 'right-4'}`}>
                               0{index + 1}
                           </div>
@@ -61,7 +61,7 @@ export default function ProcessSection() {
                       <div className="absolute left-1/2 -translate-x-1/2 z-10 flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 text-primary border-4 border-background group-hover:scale-110 transition-all duration-300">
                           <Icon className="h-8 w-8" />
                       </div>
-                       <div className={`w-1/2 ${isEven ? 'pl-8' : 'pr-8'}`}></div>
+                       <div className="w-1/2"></div>
                     </div>
                   )
                 })}
