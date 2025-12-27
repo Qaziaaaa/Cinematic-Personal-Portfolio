@@ -2,9 +2,8 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { ChevronLeft, ChevronRight, Menu, X } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { Button } from './ui/button';
-import { communityConfig } from '@/lib/config';
 import { cn } from '@/lib/utils';
 
 const navLinks = [
@@ -17,25 +16,9 @@ const navLinks = [
 function Logo() {
     return (
         <div className="flex items-center font-headline text-xl font-bold">
-            <ChevronLeft className="h-6 w-6 text-primary" strokeWidth={3} />
-            <span className="mx-[-4px]">Qazi</span>
-            <div className="relative inline-flex items-center">
-                <svg
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-6 w-6 text-primary/80"
-                    stroke="currentColor"
-                    strokeWidth="3"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                >
-                    <line x1="17" y1="7" x2="7" y2="17"></line>
-                </svg>
-                <ChevronRight className="h-6 w-6 text-primary ml-[-24px]" strokeWidth={3} />
-            </div>
+            <span className="text-primary font-bold text-2xl">{'{'}</span>
+            <span className="mx-1">Qazi</span>
+            <span className="text-primary font-bold text-2xl">{'}'}</span>
         </div>
     )
 }
