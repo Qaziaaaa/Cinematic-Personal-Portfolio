@@ -1,4 +1,5 @@
 import { Compass, DraftingCompass, Code, Rocket } from "lucide-react";
+import { DragonballPattern } from "../DragonballPattern";
 
 const processSteps = [
   {
@@ -26,9 +27,9 @@ const processSteps = [
 export default function ProcessSection() {
   return (
     <section id="process" className="py-20 sm:py-32 relative bg-background overflow-hidden">
+        <DragonballPattern id="process-pattern" className="absolute inset-0 h-full w-full opacity-[0.03]" />
         <div className="absolute inset-x-0 top-0 h-[500px] bg-gradient-to-b from-background via-background/90 to-transparent z-10"></div>
         <div className="absolute inset-x-0 bottom-0 h-[500px] bg-gradient-to-t from-background via-background/90 to-transparent z-10"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))] opacity-20"></div>
 
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 relative z-20">
             <div className="text-center">
