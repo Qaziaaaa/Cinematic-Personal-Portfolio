@@ -27,7 +27,7 @@ const processSteps = [
 export default function ProcessSection() {
   return (
     <section id="process" className="py-20 sm:py-32 relative bg-background overflow-hidden">
-        <DragonballPattern id="process-pattern" className="absolute inset-0 h-full w-full opacity-[0.03]" />
+        <DragonballPattern id="process-pattern" className="absolute inset-0 h-full w-full opacity-[0.05]" />
         <div className="absolute inset-x-0 top-0 h-[500px] bg-gradient-to-b from-background via-background/90 to-transparent z-10"></div>
         <div className="absolute inset-x-0 bottom-0 h-[500px] bg-gradient-to-t from-background via-background/90 to-transparent z-10"></div>
 

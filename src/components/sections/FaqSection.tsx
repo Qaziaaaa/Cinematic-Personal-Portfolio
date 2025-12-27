@@ -17,7 +17,7 @@ const faqs = [
 export default function FaqSection() {
   return (
     <section id="faq" className="py-20 sm:py-32 relative overflow-hidden">
-      <DragonballPattern id="faq-pattern" className="absolute inset-0 h-full w-full opacity-[0.04]" />
+      <DragonballPattern id="faq-pattern" className="absolute inset-0 h-full w-full opacity-[0.06]" />
       <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 relative">
         <div className="text-center">
           <h2 className="font-headline text-4xl font-bold text-foreground sm:text-5xl">

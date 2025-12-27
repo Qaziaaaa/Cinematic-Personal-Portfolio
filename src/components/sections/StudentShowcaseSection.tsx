@@ -34,7 +34,7 @@ export default async function StudentShowcaseSection() {
 
   return (
     <section id="projects" className="py-20 sm:py-32 relative overflow-hidden bg-background">
-      <DragonballPattern id="projects-pattern" className="absolute inset-0 h-full w-full opacity-[0.03]" />
+      <DragonballPattern id="projects-pattern" className="absolute inset-0 h-full w-full opacity-[0.05]" />
        <div className="absolute inset-x-0 top-0 h-[500px] bg-gradient-to-b from-background via-background/80 to-transparent z-0"></div>
 
       <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 relative z-10">
