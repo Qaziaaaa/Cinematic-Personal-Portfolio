@@ -49,9 +49,6 @@ export default async function StudentShowcaseSection() {
             <h2 className="mt-2 font-headline text-4xl font-bold text-foreground sm:text-5xl">
                 A selection of my recent work
             </h2>
-            <div className="mt-4 flex justify-center">
-              <div className="h-1 w-20 rounded-full bg-primary shadow-[0_0_15px_theme(colors.primary/0.7)]"></div>
-            </div>
             <p className="mx-auto mt-6 max-w-3xl text-lg text-muted-foreground">
                 A showcase of my passion for design, motion, and intelligent systems.
             </p>
