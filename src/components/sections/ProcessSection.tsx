@@ -30,6 +30,7 @@ export default function ProcessSection() {
         <DragonballPattern id="process-pattern" className="absolute inset-0 h-full w-full opacity-[0.03]" />
         <div className="absolute inset-x-0 top-0 h-[500px] bg-gradient-to-b from-background via-background/90 to-transparent z-10"></div>
         <div className="absolute inset-x-0 bottom-0 h-[500px] bg-gradient-to-t from-background via-background/90 to-transparent z-10"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))] opacity-20"></div>
 
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-20">
             <div className="text-center">
@@ -42,28 +43,24 @@ export default function ProcessSection() {
                 </p>
             </div>
 
-            <div className="relative mt-20">
-                <div className="absolute left-1/2 top-0 -bottom-1/2 -translate-x-1/2 w-px bg-primary/20" aria-hidden="true"></div>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-12">
-                    {processSteps.map((step, index) => {
-                        const Icon = step.icon;
-                        const isEven = index % 2 === 0;
-                        return (
-                            <div key={index} className={`relative flex items-start gap-6 ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
-                                <div className="absolute left-1/2 top-7 -translate-x-1/2 w-4 h-4 rounded-full bg-background border-2 border-primary ring-4 ring-background"></div>
-                                
-                                <div className={`flex-shrink-0 w-16 h-16 rounded-lg bg-card border border-primary/20 flex items-center justify-center text-primary transition-all duration-300 group-hover:scale-110`}>
+            <div className="mt-20 grid grid-cols-1 md:grid-cols-2 gap-8">
+                {processSteps.map((step, index) => {
+                    const Icon = step.icon;
+                    return (
+                        <div key={index} className="group relative rounded-2xl bg-card/80 backdrop-blur-sm border border-primary/20 p-8 transition-all duration-300 hover:border-primary/40 hover:-translate-y-2 hover:shadow-[0_0_40px_theme(colors.primary/0.2)]">
+                            <div className="absolute top-4 right-4 text-5xl font-bold text-primary/10 transition-colors duration-300 group-hover:text-primary/20">
+                                0{index + 1}
+                            </div>
+                            <div className="relative z-10">
+                                <div className="flex h-16 w-16 items-center justify-center rounded-lg bg-primary/10 text-primary mb-6 border border-primary/20 transition-all duration-300 group-hover:scale-110 group-hover:bg-primary/20">
                                     <Icon className="h-8 w-8" />
                                 </div>
-                                <div className={`text-left ${isEven ? '' : 'md:text-right'}`}>
-                                    <p className="font-headline text-2xl font-bold text-foreground">{`0${index + 1}. ${step.title}`}</p>
-                                    <p className="mt-2 text-muted-foreground">{step.description}</p>
-                                </div>
+                                <h3 className="font-headline text-2xl font-bold text-foreground">{step.title}</h3>
+                                <p className="mt-2 text-muted-foreground">{step.description}</p>
                             </div>
-                        )
-                    })}
-                </div>
+                        </div>
+                    )
+                })}
             </div>
         </div>
     </section>
