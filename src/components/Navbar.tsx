@@ -14,7 +14,6 @@ const navLinks = [
   { href: '#projects', label: 'Projects' },
   { href: '#testimonials', label: 'Testimonials' },
   { href: '#faq', label: 'FAQ' },
-  { href: '#contact', label: 'Contact' },
 ];
 
 export default function Navbar() {
@@ -53,7 +52,9 @@ export default function Navbar() {
           </nav>
 
           <div className="hidden md:block">
-            <Button size="sm">Get in Touch</Button>
+            <Link href="#contact">
+              <Button size="sm">Get in Touch</Button>
+            </Link>
           </div>
 
           <div className="md:hidden">
@@ -102,7 +103,9 @@ export default function Navbar() {
                 {link.label}
               </Link>
             ))}
-             <Button className="mt-4 w-full">Get in Touch</Button>
+             <Link href="#contact" className="mt-4 w-full">
+              <Button className="w-full">Get in Touch</Button>
+            </Link>
           </nav>
         </div>
       </div>

@@ -2,6 +2,7 @@ import Image from "next/image";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { FireballIcon } from "../FireballIcon";
 import { Button } from "../ui/button";
+import Link from "next/link";
 
 const skills = [
   "AI-Powered Website Development",
@@ -71,9 +72,11 @@ export default function AboutSection() {
 
             <div className="mt-12">
               <p className="text-lg font-medium text-foreground">Let’s build something powerful together.</p>
-              <Button size="lg" className="mt-4 shadow-[0_0_20px_theme(colors.primary/0.5)] transition-shadow hover:shadow-[0_0_30px_theme(colors.primary/0.7)]">
-                Get in Touch
-              </Button>
+              <Link href="#contact">
+                <Button size="lg" className="mt-4 shadow-[0_0_20px_theme(colors.primary/0.5)] transition-shadow hover:shadow-[0_0_30px_theme(colors.primary/0.7)]">
+                  Get in Touch
+                </Button>
+              </Link>
             </div>
           </div>
 

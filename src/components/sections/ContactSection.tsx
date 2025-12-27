@@ -4,6 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import ContactForm from "./ContactForm";
+import Link from "next/link";
 
 export default function ContactSection() {
   return (
@@ -32,9 +33,11 @@ export default function ContactSection() {
                 I'm currently available for freelance projects and collaborations. If you have an idea you'd like to discuss, let's connect.
               </p>
               <div className="mt-10 flex items-center justify-start gap-4">
-                <Button size="lg" className="shadow-[0_0_20px_theme(colors.primary/0.5)] transition-shadow hover:shadow-[0_0_30px_theme(colors.primary/0.7)]">
-                  Get In Touch
-                </Button>
+                <Link href="#contact">
+                  <Button size="lg" className="shadow-[0_0_20px_theme(colors.primary/0.5)] transition-shadow hover:shadow-[0_0_30px_theme(colors.primary/0.7)]">
+                    Get In Touch
+                  </Button>
+                </Link>
               </div>
             </div>
 
