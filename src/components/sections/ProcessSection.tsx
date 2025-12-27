@@ -42,25 +42,26 @@ export default function ProcessSection() {
             </div>
 
             <div className="relative mt-20">
-              <div className="absolute left-0 right-0 top-0 mx-auto h-full w-px bg-primary/20 md:left-1/2 md:-translate-x-1/2"></div>
+              <div className="absolute left-1/2 -translate-x-1/2 h-full w-px bg-primary/20"></div>
               <div className="space-y-16">
                 {processSteps.map((step, index) => {
                   const Icon = step.icon;
                   const isEven = index % 2 === 0;
                   return (
-                    <div key={index} className="relative flex items-center md:justify-center">
-                      <div className={`relative flex items-center w-full md:w-1/2 ${isEven ? 'md:justify-start' : 'md:justify-end'}`}>
-                        <div className={`w-full md:w-[calc(100%-4rem)] p-8 group relative rounded-2xl bg-card/80 backdrop-blur-sm border border-primary/20 transition-all duration-300 hover:border-primary/40 hover:-translate-y-2 hover:shadow-[0_0_40px_theme(colors.primary/0.2)] ${isEven ? 'md:order-2' : 'md:order-1 text-right'}`}>
-                          <div className={`absolute top-4 text-5xl font-bold text-primary/10 transition-colors duration-300 group-hover:text-primary/20 ${isEven ? 'right-4' : 'left-4'}`}>
+                    <div key={index} className="relative flex items-center justify-center">
+                      <div className={`w-1/2 ${isEven ? 'pr-8' : 'pl-8'}`}>
+                        <div className={`p-8 group relative rounded-2xl bg-card/80 backdrop-blur-sm border border-primary/20 transition-all duration-300 hover:border-primary/40 hover:-translate-y-2 hover:shadow-[0_0_40px_theme(colors.primary/0.2)] ${isEven ? 'text-right' : 'text-left'}`}>
+                          <div className={`absolute top-4 text-5xl font-bold text-primary/10 transition-colors duration-300 group-hover:text-primary/20 ${isEven ? 'left-4' : 'right-4'}`}>
                               0{index + 1}
                           </div>
                           <h3 className="font-headline text-2xl font-bold text-foreground">{step.title}</h3>
                           <p className="mt-2 text-muted-foreground">{step.description}</p>
                         </div>
-                        <div className={`absolute z-10 flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 text-primary border-4 border-background group-hover:scale-110 transition-all duration-300 ${isEven ? 'md:order-1 left-0 md:left-auto md:-right-8' : 'md:order-2 right-0 md:right-auto md:-left-8'}`}>
-                          <Icon className="h-8 w-8" />
-                        </div>
                       </div>
+                      <div className="absolute left-1/2 -translate-x-1/2 z-10 flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 text-primary border-4 border-background group-hover:scale-110 transition-all duration-300">
+                          <Icon className="h-8 w-8" />
+                      </div>
+                       <div className={`w-1/2 ${isEven ? 'pl-8' : 'pr-8'}`}></div>
                     </div>
                   )
                 })}
