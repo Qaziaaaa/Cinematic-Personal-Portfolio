@@ -4,6 +4,7 @@ import { ArrowRight, Eye } from "lucide-react";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
+import { DragonballPattern } from "../DragonballPattern";
 
 const projects = [
   { 
@@ -33,14 +34,7 @@ export default async function StudentShowcaseSection() {
 
   return (
     <section id="projects" className="py-20 sm:py-32 relative overflow-hidden bg-background">
-      <div
-          className="absolute inset-0 z-0 opacity-5"
-          style={{
-              backgroundImage: 'radial-gradient(circle, hsl(var(--primary) / 0.05) 1px, transparent 1px), radial-gradient(circle, hsl(var(--primary) / 0.05) 1px, transparent 1px)',
-              backgroundSize: '30px 30px',
-              backgroundPosition: '0 0, 15px 15px',
-          }}
-      />
+      <DragonballPattern id="projects-pattern" className="absolute inset-0 h-full w-full opacity-[0.03]" />
        <div className="absolute inset-x-0 top-0 h-[500px] bg-gradient-to-b from-background via-background/80 to-transparent z-0"></div>
 
       <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 relative z-10">
