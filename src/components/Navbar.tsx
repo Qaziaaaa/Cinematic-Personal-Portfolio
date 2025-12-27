@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { CodeXml, Menu, X } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Slash, Menu, X } from 'lucide-react';
 import { Button } from './ui/button';
 import { communityConfig } from '@/lib/config';
 import { cn } from '@/lib/utils';
@@ -13,6 +13,19 @@ const navLinks = [
   { href: '#projects', label: 'Projects' },
   { href: '#contact', label: 'Contact' },
 ];
+
+function Logo() {
+    return (
+        <div className="flex items-center font-headline text-xl font-bold">
+            <ChevronLeft className="h-6 w-6 text-primary" strokeWidth={3} />
+            <span className="mx-[-4px]">Qazi</span>
+            <div className="relative inline-flex items-center">
+                <Slash className="h-6 w-6 text-primary/80" strokeWidth={3} style={{ transform: 'scaleX(-1) translateX(2px)' }}/>
+                <ChevronRight className="h-6 w-6 text-primary ml-[-11px]" strokeWidth={3} />
+            </div>
+        </div>
+    )
+}
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -37,8 +50,8 @@ export default function Navbar() {
       )}>
         <div className="flex items-center justify-between px-4">
           <Link href="/" className="flex items-center gap-2 text-foreground transition-opacity hover:opacity-80">
-            <CodeXml className="h-6 w-6 text-primary" />
-            <span className="font-headline text-xl font-bold hidden sm:inline">{communityConfig.name}</span>
+            <div className="hidden sm:inline"><Logo /></div>
+            <div className="sm:hidden"><Logo /></div>
           </Link>
           
           <nav className="hidden md:flex items-center gap-6">
@@ -77,8 +90,7 @@ export default function Navbar() {
         )} onClick={(e) => e.stopPropagation()}>
           <div className="flex items-center justify-between">
             <Link href="/" className="flex items-center gap-2 text-foreground transition-opacity hover:opacity-80">
-              <CodeXml className="h-6 w-6 text-primary" />
-              <span className="font-headline text-xl font-bold">{communityConfig.name}</span>
+              <Logo />
             </Link>
             <Button
               variant="ghost"
