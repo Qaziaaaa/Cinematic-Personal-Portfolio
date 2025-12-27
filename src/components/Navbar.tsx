@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { ChevronLeft, ChevronRight, Slash, Menu, X } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Menu, X } from 'lucide-react';
 import { Button } from './ui/button';
 import { communityConfig } from '@/lib/config';
 import { cn } from '@/lib/utils';
@@ -20,8 +20,21 @@ function Logo() {
             <ChevronLeft className="h-6 w-6 text-primary" strokeWidth={3} />
             <span className="mx-[-4px]">Qazi</span>
             <div className="relative inline-flex items-center">
-                <Slash className="h-6 w-6 text-primary/80" strokeWidth={3} />
-                <ChevronRight className="h-6 w-6 text-primary ml-[-11px]" strokeWidth={3} />
+                <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-6 w-6 text-primary/80"
+                    stroke="currentColor"
+                    strokeWidth="3"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                >
+                    <line x1="17" y1="7" x2="7" y2="17"></line>
+                </svg>
+                <ChevronRight className="h-6 w-6 text-primary ml-[-24px]" strokeWidth={3} />
             </div>
         </div>
     )
