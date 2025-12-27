@@ -1,5 +1,5 @@
 export const communityConfig = {
-  name: "Qazi's Portfolio",
+  name: "<Qazi/>",
   tagline: "Building Digital Experiences with AI and Animation.",
   description: "I create modern, responsive, and accessible web interfaces that users love.",
   introLine: {
