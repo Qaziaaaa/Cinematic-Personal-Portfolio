@@ -43,27 +43,29 @@ export default function ProcessSection() {
             </div>
 
             <div className="relative mt-20">
-              <div className="absolute left-1/2 top-4 -translate-x-1/2 h-[calc(100%-2rem)] w-px bg-primary/20 hidden md:block"></div>
-              <div className="space-y-16 md:space-y-0">
+              <div className="absolute left-1/2 top-4 hidden h-[calc(100%-2rem)] w-px -translate-x-1/2 bg-primary/20 md:block" aria-hidden="true"></div>
+              
+              <div className="space-y-16">
                 {processSteps.map((step, index) => {
                   const Icon = step.icon;
                   const isEven = index % 2 === 0;
                   return (
-                    <div key={index} className="relative flex flex-col md:flex-row items-center md:items-start md:space-y-0 space-y-8">
-                      <div className={`w-full md:w-1/2 flex ${isEven ? 'md:justify-end md:pr-8' : 'md:justify-start md:pl-8'} ${isEven ? 'md:order-1' : 'md:order-3'}`}>
-                        <div className={`p-8 w-full group relative rounded-2xl bg-card/80 backdrop-blur-sm border border-primary/20 transition-all duration-300 hover:border-primary/40 hover:-translate-y-2 hover:shadow-[0_0_40px_theme(colors.primary/0.2)] text-center md:text-${isEven ? 'right' : 'left'}`}>
-                          <div className={`absolute top-4 text-5xl font-bold text-primary/10 transition-colors duration-300 group-hover:text-primary/20 ${isEven ? 'left-4' : 'right-4'}`}>
+                    <div key={index} className="relative flex flex-col items-center gap-8 md:grid md:grid-cols-2 md:gap-16">
+                      <div className={`flex flex-col items-center text-center md:items-start md:text-left ${isEven ? 'md:order-last md:pl-8' : 'md:pr-8 md:text-right md:items-end'}`}>
+                        <div className={`p-8 w-full group relative rounded-2xl bg-card/80 backdrop-blur-sm border border-primary/20 transition-all duration-300 hover:border-primary/40 hover:-translate-y-2 hover:shadow-[0_0_40px_theme(colors.primary/0.2)]`}>
+                           <div className={`absolute top-4 text-5xl font-bold text-primary/10 transition-colors duration-300 group-hover:text-primary/20 ${isEven ? 'left-4' : 'right-4'}`}>
                               0{index + 1}
                           </div>
                           <h3 className="font-headline text-2xl font-bold text-foreground">{step.title}</h3>
                           <p className="mt-2 text-muted-foreground">{step.description}</p>
                         </div>
                       </div>
-                      <div className={`order-first md:order-2 md:absolute md:left-1/2 md:-translate-x-1/2 z-10 flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 text-primary border-4 border-background group-hover:scale-110 transition-all duration-300`}>
-                          <Icon className="h-8 w-8" />
+
+                      <div className="flex items-center justify-center md:absolute md:left-1/2 md:top-1/2 md:-translate-x-1/2 md:-translate-y-1/2">
+                        <div className="z-10 flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 text-primary border-4 border-background transition-all duration-300">
+                            <Icon className="h-8 w-8" />
+                        </div>
                       </div>
-                      {/* Placeholder for spacing on desktop */}
-                      <div className="hidden md:block md:w-1/2 md:order-2"></div>
                     </div>
                   )
                 })}
