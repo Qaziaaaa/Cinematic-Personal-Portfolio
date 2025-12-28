@@ -4,6 +4,8 @@ import { useState, useEffect, useRef, useCallback } from 'react';
 import { Instagram, Linkedin, Github } from 'lucide-react';
 import { communityConfig } from '@/lib/config';
 import { cn } from '@/lib/utils';
+import { useIsMobile } from '@/hooks/use-mobile';
+import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 const TOTAL_FRAMES = 145;
 const FRAME_URL_PREFIX = 'https://ulwhdamdqetadrsffoxq.supabase.co/storage/v1/object/public/Webp%20sequence/frame_';
@@ -17,12 +19,11 @@ interface ParallaxHeroProps {
   onLoaded: () => void;
 }
 
-export default function ParallaxHero({ onProgress, onLoaded }: ParallaxHeroProps) {
+function DesktopHero({ onProgress, onLoaded }: ParallaxHeroProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const imageCache = useRef<HTMLImageElement[]>([]);
   const heroRef = useRef<HTMLDivElement>(null);
   const frameIndex = useRef<number>(0);
-  
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
@@ -46,16 +47,12 @@ export default function ParallaxHero({ onProgress, onLoaded }: ParallaxHeroProps
           onProgress((loadedCount / TOTAL_FRAMES) * 100);
           resolve();
         };
-        img.onerror = () => {
-          resolve();
-        };
+        img.onerror = () => resolve();
       });
     });
   
     try {
       await Promise.all(loadPromises);
-    } catch (error) {
-      // console.error("Failed to preload images:", error);
     } finally {
       onLoaded();
     }
@@ -80,10 +77,10 @@ export default function ParallaxHero({ onProgress, onLoaded }: ParallaxHeroProps
     const imgAspect = img.naturalWidth / img.naturalHeight;
 
     let sx = 0, sy = 0, sWidth = img.naturalWidth, sHeight = img.naturalHeight;
-    if (imgAspect > canvasAspect) { // Image is wider than canvas
+    if (imgAspect > canvasAspect) {
         sWidth = img.naturalHeight * canvasAspect;
         sx = (img.naturalWidth - sWidth) / 2;
-    } else { // Image is taller than canvas
+    } else {
         sHeight = img.naturalWidth / canvasAspect;
         sy = (img.naturalHeight - sHeight) / 2;
     }
@@ -95,9 +92,7 @@ export default function ParallaxHero({ onProgress, onLoaded }: ParallaxHeroProps
   useEffect(() => {
     if (!isMounted) return;
     preloadImages().then(() => {
-      if (canvasRef.current) {
-        drawFrame(0);
-      }
+      if (canvasRef.current) drawFrame(0);
     });
   }, [isMounted, preloadImages, drawFrame]);
   
@@ -135,9 +130,7 @@ export default function ParallaxHero({ onProgress, onLoaded }: ParallaxHeroProps
     };
   
     const handleResize = () => {
-      if (canvasRef.current) {
-        drawFrame(frameIndex.current);
-      }
+      if (canvasRef.current) drawFrame(frameIndex.current);
     };
   
     window.addEventListener('scroll', handleScroll, { passive: true });
@@ -149,9 +142,7 @@ export default function ParallaxHero({ onProgress, onLoaded }: ParallaxHeroProps
     return () => {
       window.removeEventListener('scroll', handleScroll);
       window.removeEventListener('resize', handleResize);
-      if (animationFrameId) {
-        cancelAnimationFrame(animationFrameId);
-      }
+      if (animationFrameId) cancelAnimationFrame(animationFrameId);
     };
   }, [drawFrame, isMounted]);
 
@@ -160,15 +151,10 @@ export default function ParallaxHero({ onProgress, onLoaded }: ParallaxHeroProps
       <div className="sticky top-0 h-screen w-full overflow-hidden rounded-b-2xl">
         <canvas 
           ref={canvasRef} 
-          className={cn(
-            "absolute inset-0 h-full w-full",
-            "filter contrast-[1.1] saturate-[1.1] brightness-100",
-            "[--glow-color:hsl(var(--primary)/0.1)] [filter:drop-shadow(0_0_10px_var(--glow-color))]"
-          )}
+          className="absolute inset-0 h-full w-full filter contrast-[1.1] saturate-[1.1] brightness-100 [--glow-color:hsl(var(--primary)/0.1)] [filter:drop-shadow(0_0_10px_var(--glow-color))]"
         />
         <div className="absolute inset-0 bg-black/40" />
         <div className="relative z-10 mx-auto flex h-full max-w-5xl flex-col justify-center px-4 text-foreground sm:px-6 lg:px-8">
-          
           <div className="max-w-sm">
             <h1 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl">
               <span className="text-white">{communityConfig.introLine.part1}</span>
@@ -178,20 +164,61 @@ export default function ParallaxHero({ onProgress, onLoaded }: ParallaxHeroProps
               {communityConfig.description}
             </p>
           </div>
-
           <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex justify-center space-x-6">
-            <a href={communityConfig.socials.linkedin} aria-label="LinkedIn" className="text-foreground/70 transition-colors hover:text-primary">
-              <Linkedin size={24} />
-            </a>
-            <a href={communityConfig.socials.github} aria-label="GitHub" className="text-foreground/70 transition-colors hover:text-primary">
-              <Github size={24} />
-            </a>
-            <a href={communityConfig.socials.instagram} aria-label="Instagram" className="text-foreground/70 transition-colors hover:text-primary">
-              <Instagram size={24} />
-            </a>
+            <a href={communityConfig.socials.linkedin} aria-label="LinkedIn" className="text-foreground/70 transition-colors hover:text-primary"><Linkedin size={24} /></a>
+            <a href={communityConfig.socials.github} aria-label="GitHub" className="text-foreground/70 transition-colors hover:text-primary"><Github size={24} /></a>
+            <a href={communityConfig.socials.instagram} aria-label="Instagram" className="text-foreground/70 transition-colors hover:text-primary"><Instagram size={24} /></a>
           </div>
         </div>
       </div>
     </div>
   );
+}
+
+function MobileHero({ onLoaded }: { onLoaded: () => void }) {
+  const gokuImage = PlaceHolderImages.find(p => p.id === 'about-portrait');
+
+  useEffect(() => {
+    onLoaded();
+  }, [onLoaded]);
+
+  return (
+    <div className="relative h-screen w-full overflow-hidden rounded-b-2xl">
+      {gokuImage && (
+        <div 
+          className="absolute inset-0 h-full w-full bg-cover bg-center filter contrast-[1.1] saturate-[1.1]"
+          style={{ backgroundImage: `url(${gokuImage.imageUrl})` }}
+        />
+      )}
+      <div className="absolute inset-0 bg-black/50" />
+      <div className="relative z-10 mx-auto flex h-full max-w-5xl flex-col justify-center px-4 text-foreground sm:px-6 lg:px-8">
+        <div className="max-w-sm">
+          <h1 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl">
+            <span className="text-white">{communityConfig.introLine.part1}</span>
+            <span className="text-primary">{communityConfig.introLine.part2}</span>
+          </h1>
+          <p className="mt-4 text-lg leading-7 text-white">
+            {communityConfig.description}
+          </p>
+        </div>
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex justify-center space-x-6">
+          <a href={communityConfig.socials.linkedin} aria-label="LinkedIn" className="text-foreground/70 transition-colors hover:text-primary"><Linkedin size={24} /></a>
+          <a href={communityConfig.socials.github} aria-label="GitHub" className="text-foreground/70 transition-colors hover:text-primary"><Github size={24} /></a>
+          <a href={communityConfig.socials.instagram} aria-label="Instagram" className="text-foreground/70 transition-colors hover:text-primary"><Instagram size={24} /></a>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default function ParallaxHero({ onProgress, onLoaded }: ParallaxHeroProps) {
+  const isMobile = useIsMobile();
+
+  if (isMobile === undefined) {
+    return null; // or a placeholder/spinner
+  }
+
+  return isMobile 
+    ? <MobileHero onLoaded={onLoaded} /> 
+    : <DesktopHero onProgress={onProgress} onLoaded={onLoaded} />;
 }
