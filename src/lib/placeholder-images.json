@@ -3,8 +3,14 @@
     {
       "id": "about-portrait",
       "description": "A powerful anime-style character with glowing energy",
-      "imageUrl": "https://i.postimg.cc/dtCLbfn3/goku-amv-dark-edgy.jpg",
+      "imageUrl": "https://i.postimg.cc/QdnHLr1K/goku-amv-ultra-sharp.png",
       "imageHint": "anime warrior energy"
+    },
+    {
+      "id": "mobile-hero-bg",
+      "description": "Dark and edgy image of Goku for mobile hero background",
+      "imageUrl": "https://i.postimg.cc/dtCLbfn3/goku-amv-dark-edgy.jpg",
+      "imageHint": "dark anime warrior"
     },
     {
       "id": "project-nebula",

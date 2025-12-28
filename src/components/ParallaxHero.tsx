@@ -176,7 +176,7 @@ function DesktopHero({ onProgress, onLoaded }: ParallaxHeroProps) {
 }
 
 function MobileHero({ onLoaded }: { onLoaded: () => void }) {
-  const gokuImage = PlaceHolderImages.find(p => p.id === 'about-portrait');
+  const gokuImage = PlaceHolderImages.find(p => p.id === 'mobile-hero-bg');
 
   useEffect(() => {
     onLoaded();
