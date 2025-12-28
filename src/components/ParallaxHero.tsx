@@ -191,13 +191,13 @@ function MobileHero({ onLoaded }: { onLoaded: () => void }) {
         />
       )}
       <div className="absolute inset-0 bg-black/50" />
-      <div className="relative z-10 mx-auto flex h-full max-w-5xl flex-col justify-center px-4 text-foreground sm:px-6 lg:px-8">
-        <div className="max-w-sm">
-          <h1 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl">
+      <div className="relative z-10 mx-auto flex h-full max-w-5xl flex-col items-center justify-center px-4 text-center text-foreground sm:px-6 lg:px-8">
+        <div>
+          <h1 className="font-headline text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
             <span className="text-white">{communityConfig.introLine.part1}</span>
             <span className="text-primary">{communityConfig.introLine.part2}</span>
           </h1>
-          <p className="mt-4 text-lg leading-7 text-white">
+          <p className="mx-auto mt-4 max-w-md text-lg leading-7 text-white">
             {communityConfig.description}
           </p>
         </div>
