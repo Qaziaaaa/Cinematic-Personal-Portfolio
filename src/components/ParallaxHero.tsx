@@ -186,11 +186,12 @@ function MobileHero({ onLoaded }: { onLoaded: () => void }) {
     <div className="relative h-screen w-full overflow-hidden rounded-b-2xl">
       {gokuImage && (
         <div 
-          className="absolute inset-0 h-full w-full bg-cover bg-center filter contrast-[1.1] saturate-[1.1]"
+          className="absolute inset-0 h-full w-full bg-cover bg-center filter contrast-125 saturate-125"
           style={{ backgroundImage: `url(${gokuImage.imageUrl})` }}
         />
       )}
-      <div className="absolute inset-0 bg-black/50" />
+      <div className="absolute inset-0 bg-black/60" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/50" />
       <div className="relative z-10 mx-auto flex h-full max-w-5xl flex-col items-center justify-center px-4 text-center text-foreground sm:px-6 lg:px-8">
         <div>
           <h1 className="font-headline text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
