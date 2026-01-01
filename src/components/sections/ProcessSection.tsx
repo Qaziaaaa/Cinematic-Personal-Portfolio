@@ -52,7 +52,7 @@ export default function ProcessSection() {
                   return (
                     <div key={index} className="relative flex flex-col items-center gap-8 md:grid md:grid-cols-2 md:gap-16">
                       
-                      <div className={`flex flex-col items-center text-center md:items-start md:text-left ${isEven ? 'md:items-end md:text-right' : 'md:order-first'}`}>
+                      <div className={`flex flex-col items-center text-center md:items-start md:text-left ${!isEven ? 'md:order-last md:items-start md:text-left' : 'md:items-end md:text-right'}`}>
                         <div className={`p-8 w-full group relative rounded-2xl bg-card/80 backdrop-blur-sm border border-primary/20 transition-all duration-300 hover:border-primary/40 hover:-translate-y-2 hover:shadow-[0_0_40px_theme(colors.primary/0.2)]`}>
                            <div className={`absolute top-4 text-5xl font-bold text-primary/10 transition-colors duration-300 group-hover:text-primary/20 ${isEven ? 'right-4' : 'left-4'}`}>
                               0{index + 1}
