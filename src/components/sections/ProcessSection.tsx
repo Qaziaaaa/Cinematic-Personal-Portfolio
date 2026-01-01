@@ -35,7 +35,7 @@ export default function ProcessSection() {
             <div className="text-center">
                 <p className="font-headline text-sm uppercase tracking-widest text-primary">My Process</p>
                 <h2 className="mt-2 font-headline text-4xl font-bold text-foreground sm:text-5xl">
-                    A Blueprint for Success
+                    An Alternating Timeline Layout
                 </h2>
                 <p className="mx-auto mt-6 max-w-3xl text-lg text-muted-foreground">
                     My process is built on clarity, collaboration, and a relentless focus on quality. Here’s how I turn ideas into reality.
@@ -51,9 +51,10 @@ export default function ProcessSection() {
                   const isEven = index % 2 === 0;
                   return (
                     <div key={index} className="relative flex flex-col items-center gap-8 md:grid md:grid-cols-2 md:gap-16">
-                      <div className={`flex flex-col items-center text-center md:items-start md:text-left ${isEven ? '' : 'md:order-last md:items-end md:text-right'}`}>
+                      
+                      <div className={`flex flex-col items-center text-center md:items-start md:text-left ${isEven ? 'md:items-end md:text-right' : 'md:order-first'}`}>
                         <div className={`p-8 w-full group relative rounded-2xl bg-card/80 backdrop-blur-sm border border-primary/20 transition-all duration-300 hover:border-primary/40 hover:-translate-y-2 hover:shadow-[0_0_40px_theme(colors.primary/0.2)]`}>
-                           <div className={`absolute top-4 text-5xl font-bold text-primary/10 transition-colors duration-300 group-hover:text-primary/20 ${isEven ? 'left-4' : 'right-4'}`}>
+                           <div className={`absolute top-4 text-5xl font-bold text-primary/10 transition-colors duration-300 group-hover:text-primary/20 ${isEven ? 'right-4' : 'left-4'}`}>
                               0{index + 1}
                           </div>
                           <h3 className="font-headline text-2xl font-bold text-foreground">{step.title}</h3>
@@ -66,6 +67,9 @@ export default function ProcessSection() {
                             <Icon className="h-8 w-8" />
                         </div>
                       </div>
+
+                      {/* Placeholder for the other side of the grid on desktop */}
+                      <div className="hidden md:block"></div>
                     </div>
                   )
                 })}
