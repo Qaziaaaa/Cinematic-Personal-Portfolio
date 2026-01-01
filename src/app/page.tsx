@@ -4,7 +4,7 @@ import ProcessSection from '@/components/sections/ProcessSection';
 import LearningPathsSection from '@/components/sections/LearningPathsSection';
 import StudentShowcaseSection from '@/components/sections/StudentShowcaseSection';
 import TestimonialsSection from '@/components/sections/TestimonialsSection';
-import FaqClientSection from '@/components/sections/FaqClientSection';
+import FaqSection from '@/components/sections/FaqSection';
 import ContactSection from '@/components/sections/ContactSection';
 import Footer from '@/components/sections/Footer';
 
@@ -17,7 +17,7 @@ export default async function Home() {
         <LearningPathsSection />
         <StudentShowcaseSection />
         <TestimonialsSection />
-        <FaqClientSection />
+        <FaqSection />
         <ContactSection />
         <Footer />
       </main>
