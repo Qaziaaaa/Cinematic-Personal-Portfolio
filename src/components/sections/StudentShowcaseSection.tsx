@@ -8,7 +8,7 @@ import { DragonballPattern } from "../DragonballPattern";
 
 const projects = [
   { 
-    title: "Project Nebula", 
+    title: "Journey Gym", 
     type: "Client Project",
     description: "A cinematic web experience crafted to tell a story through motion, depth, and interaction.", 
     imageId: "project-nebula",
@@ -16,7 +16,7 @@ const projects = [
     link: "https://journey-gym.netlify.app",
   },
   { 
-    title: "AI Recipe Generator", 
+    title: "Oliipop", 
     type: "Personal Project",
     description: "An intelligent assistant that simplifies daily decisions using smart AI-driven logic and clean UI.", 
     imageId: "project-ai-recipe",
@@ -24,7 +24,7 @@ const projects = [
     link: "https://oliipop.netlify.app",
   },
   { 
-    title: "Internal Sales Dashboard", 
+    title: "Ecommerce Store", 
     type: "Client Project",
     description: "A data-driven internal tool built to automate insights and improve operational clarity.", 
     imageId: "project-sales-dashboard",
