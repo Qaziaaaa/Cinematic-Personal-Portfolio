@@ -13,6 +13,7 @@ const projects = [
     description: "A cinematic web experience crafted to tell a story through motion, depth, and interaction.", 
     imageId: "project-nebula",
     tags: ["animation", "web design"], 
+    link: "https://journey-gym.netlify.app",
   },
   { 
     title: "AI Recipe Generator", 
@@ -20,6 +21,7 @@ const projects = [
     description: "An intelligent assistant that simplifies daily decisions using smart AI-driven logic and clean UI.", 
     imageId: "project-ai-recipe",
     tags: ["ai", "web app"],
+    link: "https://oliipop.netlify.app",
   },
   { 
     title: "Internal Sales Dashboard", 
@@ -27,6 +29,7 @@ const projects = [
     description: "A data-driven internal tool built to automate insights and improve operational clarity.", 
     imageId: "project-sales-dashboard",
     tags: ["automation", "internal tool"],
+    link: "https://ecommercestoreqazi.netlify.app",
   },
 ];
 
@@ -51,7 +54,7 @@ export default async function StudentShowcaseSection() {
           {projects.map((work, index) => {
             const projectImage = PlaceHolderImages.find(p => p.id === work.imageId);
             return (
-              <a href="#" key={index} className="group block rounded-2xl transition-all duration-300 ease-in-out hover:!opacity-100">
+              <a href={work.link} target="_blank" rel="noopener noreferrer" key={index} className="group block rounded-2xl transition-all duration-300 ease-in-out hover:!opacity-100">
                 <div className={cn(
                   "relative w-full overflow-hidden rounded-2xl border border-primary/20 bg-secondary transition-all duration-500",
                   "shadow-[0_0_20px_theme(colors.black)]",
