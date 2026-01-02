@@ -17,8 +17,8 @@ export const communityConfig = {
     { id: "#04", label: "Internal Tools Automation" },
   ],
   socials: {
-    linkedin: "#",
-    github: "#",
-    instagram: "#",
+    linkedin: "https://www.linkedin.com/in/qazi-farhan-ahmad-7a3b3432b/",
+    github: "https://github.com/Qaziaaaa",
+    instagram: "https://www.instagram.com/kidnap_bee_stepdad/",
   }
 };
