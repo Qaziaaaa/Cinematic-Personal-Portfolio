@@ -39,7 +39,7 @@ export default function TestimonialsSection() {
                 className={cn(
                   "group relative aspect-square w-full max-w-sm mx-auto rounded-full p-8 flex flex-col items-center justify-center text-center transition-all duration-500",
                   "bg-card/50 border border-primary/20",
-                  "hover:scale-105 hover:shadow-[0_0_40px_theme(colors.primary/0.3)]"
+                  "hover:scale-105 hover:shadow-[0_0_40px_hsl(var(--primary)/0.3)]"
                 )}
                 style={{ animation: `float 6s ease-in-out ${index * 1.5}s infinite` }}
               >
@@ -61,7 +61,7 @@ export default function TestimonialsSection() {
                         className="h-16 w-16 rounded-full object-cover ring-2 ring-primary/50 transition-all duration-500 group-hover:ring-primary"
                         data-ai-hint={testimonialImage.imageHint}
                       />
-                       <div className="absolute inset-0 rounded-full shadow-[0_0_15px_2px_theme(colors.primary/0.4)] opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+                       <div className="absolute inset-0 rounded-full shadow-[0_0_15px_2px_hsl(var(--primary)/0.4)] opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
                     </div>
                   )}
                   
